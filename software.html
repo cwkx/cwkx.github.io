@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+    <title>cwkx.com | research group</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <a name="top"></a>
+</head>
+<div id="header">
+  <a href="//cwkx.com/"><img src="logo.svg" alt=""/></a>&nbsp;
+  <a id="headerLink" href="//cwkx.com/">cwkx.com</a>
+  <span class="hidden"> - </span>
+  <span id="headerSubtitle">Computer Science Research Group</span>
+</div>
+<hr class="hidden"/>
+<div id="menu">
+  <a href="index.html">Home</a>
+  <a href="publications.html">Publications</a>
+  <a href="people.html">People</a>
+  <a href="research.html">Research</a>
+  <a href="teaching.html">Teaching</a>
+  <a href="software.html"><b>Software</b></a>
+  <a href="games.html">Games</a>
+</div>
+<hr class="hidden"/>
+<div id="content">
+<div id="nav">
+  <ul>
+  <li><a href="#software"><b>software</b></a></li>
+  <li><a href="#igac">igac</a></li>
+  <li><a href="#abi">abi</a></li>
+  <li><a href="#keym">keym</a></li>
+  <li><a href="#painter">painter</a></li>
+  </ul>
+</div>
+<hr class="hidden"/>
+<div id="main">
+<h2 id="software">Software</h2>
+<p>This page discuses a selection of research software and tools developed.</p>
+<hr>
+<h2 id="igac">Interactive GPU active contours</h2>
+<p>This software (<a href="https://github.com/cwkx/IGAC">GitHub link</a>) is an OpenCL implementation of the paper &quot;Interactive GPU active contours for segmenting inhomogeneous objects&quot;. Please cite the paper if you find it useful.
+<a href="https://link.springer.com/article/10.1007/s11554-017-0740-1">https://link.springer.com/article/10.1007/s11554-017-0740-1</a></p>
+<h2 id="hotkeys">Hotkeys</h2>
+<center>
+<img src="data/articles/igac/hotkeys.png" width="80%">
+</center>
+<br>
+<br>
+<iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/6W4mO7BPeGg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
+<br>
+<hr>
+<h1 id="abi">Automatic Billboard Imposters (ABI)</h1>
+<p>ABI or Automatic Billboard Imposters is an asset for Unity3D which allows the batched drawing of large amounts of complex geometry.</p>
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/vJs9anEbHRc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p><img src="/data/articles/abi/title.png" width="40%" align="right" style="margin-left:15px"></p>
+<p>This is achieved by replacing distant objects with photographs, which are generated for each object at three orthogonal views (front, right, and top). This means that there are significantly fewer triangles and texture memory used in the final scene.<br><br></p>
+<p><img src="/data/articles/abi/show.jpg" width="30%" align="left" style="margin-right:15px"></p>
+<p>Stippling shaders are also employed to smoothly transition between model and photograph, when the projected model size is less than some threshold. These shaders blend with a subtle low-frequency Gaussian bubbling effect.</p>
+<p>Hardware batching ensures that the number of draw calls remains low, which is especially useful when thousands of objects are instanced. The package can be <a href="/data/articles/abi/ABI.unitypackage">downloaded here</a>.<br></p>
+<hr>
+<h1 id="keym">Keym</h1>
+<p>I find using a mouse painful, so made this responsive widget to act as a mouse alternative/replacement using the keyboard. The widget has two modes, normal &quot;keys&quot; mode and &quot;mouse&quot; mode. When in mouse mode, all typical keyboard inputs are gobbled up and replaced with a powerful interface for manipulating the &quot;mouse&quot; at different speeds.</p>
+<p><img src="/data/articles/keym/keyboard-layout.svg" class="center" style="background-color:#ffffff; width: 400px;"></p>
+<h2 id="requirements">Requirements</h2>
+<ol>
+<li>Awesome WM</li>
+<li>xdotool (not required but installing it gives access to the majority of features)</li>
+</ol>
+<h2 id="install-instructions">Install Instructions</h2>
+<ol>
+<li>clone next to awesome/rc.lua (there should be a folder called &quot;keym&quot; with widget.lua inside next to rc.lua)</li>
+<li>local keym = require(&quot;keym/widget&quot;)                     -- put somewhere near top of awesome rc.lua</li>
+<li>right_layout:add(keym)                                  -- put in your wibox to add visual mode button to rc.lua</li>
+<li>awful.key({ }, &quot;`&quot;, function () keym.Toggle() end),     -- put somewhere in globalKeys to bind it to rc.lua</li>
+<li>script requires &quot;xdotool&quot; installed for the majority of features: mouse clicks, scrolls etc</li>
+</ol>
+<h2 id="usage-instructions">Usage Instructions</h2>
+<ol>
+<li>Press the backtick key ` to toggle keym mode ON/OFF.</li>
+<li>keym is intended to be flexible to one-handed, or two-handed usage</li>
+<li>typical two-handed use is: WASD=move, J=click, K=right-click RF=scroll, ;speed1, &#39;=speed2, h=slow</li>
+<li>left-handed only use is: WASD=move, Q=click, E=right-click, RF=scroll, \=speed1, z=speed2</li>
+<li>right-handed only use is limited: Arrows=move, Return=click, /=speed1</li>
+<li>why no vim-mode bindings? moving along diagnols causes finger-collisions, but do otherwise remap</li>
+</ol>
+</ol>
+<p>Please let me know if you find this useful, or if you find any bugs/have suggestions. Sources for this software can be <a href="https://github.com/cwkx/keym">downloaded here</a>. Note: after over a year of using this, I ended up switching to a hardware alternative with a <a href="https://olkb.com/planck">Planck</a> keyboard with custom firmware written in C.<br></p>
+<p>MIT &copy; Chris G. Willcocks</p>
+<hr>
+<h1 id="painter">Godot Pixel Painter</h1>
+<p>This is a small pixel-art painter addon for use with the Godot engine. This actually makes it pretty powerful even though its just a sprite editor, e.g. you can work with Godots powerful cutout pipeline to edit bone-based animations directly, something you can&#39;t even do with Spine.</p>
+<center>
+<img src="/data/articles/godot-pixel-painter/screenshot.png" style="width: 75%;">
+</center>
+<h3 id="install">Install</h3>
+<p>Requires <a href="http://fixnum.org/godot/">latest version of godot</a>. Copy addons folder and all its contents to your project, restart Godot, then activate plugin from editor settings.</p>
+<h3 id="features-usage">Features &amp; Usage</h3>
+<p>To use, simply select a sprite from editor and you&#39;re good to go.</p>
+<ul>
+<li>Paint colors from active palette with hotkeys 0-9</li>
+<li>Press &#39;P&#39; to get palette from selected sprite<ul>
+<li>To use different palettes, create sprites accordingly and press P on them, palettes are transferable to other sprites.</li>
+</ul>
+</li>
+<li>Undo/Redo support</li>
+<li>Resize sprites with alignment options with Sprite &gt; Resize.. menu</li>
+<li>Differnt brush sizes</li>
+<li>&quot;Save As..&quot;&quot; and &quot;Load&quot; sprites with menu<ul>
+<li>Ctrl+S on sprite to save it</li>
+</ul>
+</li>
+<li>Painting supports working on rotated/scaled/offset sprites</li>
+</ul>
+Sources for this software can be <a href="https://github.com/cwkx/godot-pixel-painter">downloaded here</a>. MIT &copy; Chris G. Willcocks<br><br>
+<a href="#top">[return to top]</a>
+</div>
+</div>
+</html>

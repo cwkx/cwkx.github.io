@@ -1,0 +1,264 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+    <title>cwkx.com | research group</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <a name="top"></a>
+</head>
+<div id="header">
+  <a href="//cwkx.com/"><img src="logo.svg" alt=""/></a>&nbsp;
+  <a id="headerLink" href="//cwkx.com/">cwkx.com</a>
+  <span class="hidden"> - </span>
+  <span id="headerSubtitle">Computer Science Research Group</span>
+</div>
+<hr class="hidden"/>
+<div id="menu">
+  <a href="index.html">Home</a>
+  <a href="publications.html">Publications</a>
+  <a href="people.html">People</a>
+  <a href="research.html"><b>Research</b></a>
+  <a href="teaching.html">Teaching</a>
+  <a href="software.html">Software</a>
+  <a href="games.html">Games</a>
+</div>
+<hr class="hidden"/>
+<div id="content">
+<div id="nav">
+  <ul>
+  <li><a href="#news"><b>news</b></a></li>
+  <li><a href="#extract3d">extracting 3d curves</a></li>
+  <li><a href="#svd">sparse volumetric deformation</a></li>
+  <li><a href="#fvs">feature-varying skeletonization</a></li>
+  </ul>
+</div>
+<hr class="hidden"/>
+<div id="main">
+<h2 id="news">Research News</h2>
+<p>This sections contains quick summaries about selected research articles.</p>
+<hr>
+<h1 id="extract3d">Extracting 3D Parametric Curves from 2D Images of Helical Objects</h1>
+<p><strong>Chris Willcocks</strong>, Philip Jackson, Carl Nelson, and Boguslaw Obara</p>
+<p><img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-0.png">
+<img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-1.png">
+<img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-2.png">
+<img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-3.png">
+<img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-4.png">
+<img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-5.png">
+<img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-6.png">
+<img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-7.png">
+<img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-8.png">
+<img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-9.png">
+<img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-10.png">
+<img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-11.png">
+<img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-12.png"></p>
+<p><a href="https://doi.org/10.1109/TPAMI.2016.2613866">Click to <strong>go to full publication on IEEE Explore</strong>.</a></p>
+<h3 id="abstract">Abstract</h3>
+<p>Helical objects occur in medicine, biology, cosmetics, nanotechnology, and engineering. Extracting a 3D parametric curve from a 2D image of a helical object has many practical applications, in particular being able to extract metrics such as tortuosity, frequency, and pitch. We present a method that is able to straighten the image object and derive a robust 3D helical curve from peaks in the object boundary. The algorithm has a small number of stable parameters that require little tuning, and the curve is validated against both synthetic and real-world data. The results show that the extracted 3D curve comes within close Hausdorff distance to the ground truth, and has near identical tortuosity for helical objects with a circular profile. Parameter insensitivity and robustness against high levels of image noise are demonstrated thoroughly and quantitatively.</p>
+<h3 id="overview">Overview</h3>
+<p>In this paper, we take a 2D image of a helical object and automatically fit a 3D curve to it. To do this, we first segment and straighten the helical object and then we find peaks on the boundaries of the helical object. The curve fits through these peaks.</p>
+<div class="note info">
+  <h5>Key Processes:</h5>
+  <p>
+   • Image segmentation<br>
+   • Image straightening<br>
+   • Curve fitting<br>
+  </p>
+</div>
+
+<h3 id="applications">Applications</h3>
+<p>The primary applications of this research are to retreive a 3D model of 2D images of helical objects, e.g. for collecting measurements, where 3D imaging is currently too expensive or impossible.</p>
+<p>At a micro scale:</p>
+<ul>
+<li><strong>Biology</strong> and <strong>medicine</strong> (e.g. Spirulina, Spirochaetes, sperm, bacterial macrofibers, microtubules, keratin, DNA, dynamin).</li>
+<li><strong>Nanotechnology</strong> (e.g. helical nanostructures, such as: nanosprings and graphitic carbon microtubules).</li>
+</ul>
+<p>At a macro scale:</p>
+<ul>
+<li><strong>Medicine</strong> (e.g. umbilical cord).</li>
+<li><strong>Biology</strong> (e.g. climbing plants, twining vines, twisted trees, seashells, Arabidopsis root).</li>
+<li><strong>Cosmetics</strong> industry (e.g. hair).</li>
+<li><strong>Engineering</strong> (e.g. screws, coils, springs, synthetic fiber ropes).</li>
+</ul>
+<div class="note info">
+  <h5>Additional output 3D metrics include:</h5>
+  <p>
+   • Tortuosity<br>
+   • Radius<br>
+   • Pitch<br>
+   • Length<br>
+  </p>
+</div>
+
+<h3 id="areas-for-future-research">Areas for Future Research</h3>
+<p>To our knowledge, this is the first work that can automatically and robustly fit a 3D parametric curve to a single 2D image of a helical object. We believe there are several areas for improvement:</p>
+<ul>
+<li>In the future, a simpler algorithm for fitting 3D parametric curves to noisy 2D data will be found that doesn&#39;t require the straightening process. This will be faster and more robust, without the need for several parameters.</li>
+<li>The future research should focus on robustly capturing 2D polylines from 2D images and transforming the polyline geometry to capture the 2D helical structure. Extending the 2D polyline to a 3D piecewise helix is a well-researched area with good solutions.</li>
+</ul>
+<h3 id="code-usage">Code Usage</h3>
+<p>Our code is written in MATLAB. To use it, clone the github repository somewhere and add it to your MATLAB workspace, then simply edit the image, set the parameters and run the script <code>main.m</code>.</p>
+<p>
+<code>
+<pre>
+I = imread(&#39;leptospira.png&#39;);
+if (size(I,3) &gt; 1); I = rgb2gray(I); end;                                   fprintf(&#39;\tdone!\nSegmenting...&#39;);</p>
+% Adjust algorithm parameters (see paper for detailed explanations)
+straighten  = true;
+sigma       = 0.01;             % smoothing amount, try 0.15 for &#39;licerasiae.png&#39;
+d           = max(size(I))/20;  % minimum distance between peaks, set to 0 for images with lots of coils
+delta       = 50;
+omega       = max(size(I))/20;
+omicron     = 30;
+push        = true;
+
+% Run our algorithm steps
+[c,B]       = part1_segment(I);                                             fprintf(&#39;\t\tdone!\nStraightening... &#39;);
+[Bp,T]      = part2_straighten(B,c,delta,omega,omicron,straighten);         fprintf(&#39;\tdone!\nFitting... &#39;);
+[p]         = part3_fitting(Bp,sigma,d,push);                               fprintf(&#39;\t\t\tdone!\nUndo transforms... &#39;);
+[tp]        = part4_undo_transforms(p,T,straighten);                        fprintf(&#39;\tdone!\n&#39;);
+
+% Create our cubic spline (cs) through the transformed curve control points tp
+cs = cscvn(tp);
+cs = fnplotdense(cs);
+
+% We can also use the straight spline (ss) from control points p
+ss = cscvn(p);
+ss = fnplotdense(ss);
+
+% Example 3D metrics from the straight spline
+tortuosity  = sum(sqrt(sum(diff(ss,1,2).^2,1))) / sqrt(sum((ss(:,end) - ss(:,1)).^2));
+peaks       = floor(length(p)/2);
+</pre>
+</code>
+</p>
+<div class="note">
+  <h5>Github:</h5>
+  <p>
+   Sources for this paper can be <a href="https://github.com/cwkx/extract-3d-curve">downloaded here</a>. These are well-documented and reflect the paper&#39;s method.
+  </p>
+</div>
+<h3 id="citation">Citation</h3>
+<p>Please cite our paper:
+<code>
+  <pre>
+      @article{willcocks-2016-extract-3d-curve,
+        author   = {C. Willcocks and P. Jackson and C. Nelson and B. Obara},
+        journal  = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+        title    = {Extracting 3D Parametric Curves from 2D Images of Helical Objects},
+        year     = {2016},
+        volume   = {PP},
+        number   = {99},
+        pages    = {1-1},
+        doi      = {10.1109/TPAMI.2016.2613866},
+        ISSN     = {0162-8828},
+        month    = {},
+     }
+  </pre>
+</code>
+</p>
+<hr>
+<h1 id="svd">Sparse Volumetric Deformation</h1>
+<p><em>Selected photos from 2013 thesis below:</em></p>
+<p><img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-1.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-14.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-23.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-34.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-36.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-43.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-50.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-56.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-74.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-92.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-97.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-98.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-100.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-110.png"></p>
+<p><a href="//etheses.dur.ac.uk/8471/">Click to <strong>go to full publication on Durham e-thesis Link</strong>.</a></p>
+<h3 id="overview">Overview</h3>
+<p>This thesis was split into two sections: 1. my attempt to come up with a way to render large amounts of animated voxel models, and 2. my skeletonization work.</p>
+<p>The renderer itself was somewhat unique and written mainly in CUDA with C++. Very briefly, the key ideas were using skeleton-mapped sparse voxel octrees for each animated model stored on disk, and paged through the memory-levels at resolutions of interest, then the renderer itself makes heavy use of instancing and top-down occlusion culling. Although it was reasonably efficient at rendering large scenes, the limitation was overly using parallel stream-compaction to discard unimportant chunks, and relying on forward transformations for the animation. It had a few key contributions, such as simple solutions to prevent holes/gaps with forward transformations by altering the rendered hierarchy (lowering the voxel resolution to fill gaps).</p>
+<h3 id="future-work">Future Work</h3>
+<p>I had more success using implicit surfaces, e.g. storing the distance transforms of 3D models in 3D texture memory at multiple resolutions. Animation is then achieved with traditional <a href="https://www.shadertoy.com/results?query=ray+marching">ray marching</a> into the texture volumes (whose external bounds are defined by cube functions). This allows for cool tricks such as smooth implicit blending to get nice looking deformations, e.g. taking the smooth minimum between nearby/connected volumes. I started to investigate automatically splitting up models into smaller distance transform volumes for each animated bone, but sadly I wasn&#39;t able to publish these results into my thesis due to time constraints. For future researchers who stumble on this page with the goal of animating lots of volumetric content, I recommend looking into implicit surfaces above traditional sparse voxel octrees.</p>
+<h3 id="citation">Citation</h3>
+<p>Please cite the thesis with:</p>
+<p>
+<code>
+  <pre>
+      @phdthesis{willcocks-2013-sparse-volumetric-deformation,
+        title  = {Sparse Volumetric Deformation},
+        author = {Chris G. Willcocks},
+        year   = {2013},
+        school = {Durham University},
+        url    = {<a href="//etheses.dur.ac.uk/8471/">http://etheses.dur.ac.uk/8471/}</a>,
+      }
+  </pre>
+</code>
+</p>
+<hr>
+<h1 id="fvs">Feature-Varying Skeletonization</h1>
+<h3>Intuitive control over the target feature size and output skeleton topology</h3>
+<p><img class="paper-thumb-5" src="/data/articles/feature-varying-skeletonization/paper-0.png">
+<img class="paper-thumb-5" src="/data/articles/feature-varying-skeletonization/paper-1.png">
+<img class="paper-thumb-5" src="/data/articles/feature-varying-skeletonization/paper-2.png">
+<img class="paper-thumb-5" src="/data/articles/feature-varying-skeletonization/paper-3.png">
+<img class="paper-thumb-5" src="/data/articles/feature-varying-skeletonization/paper-4.png">
+<img class="paper-thumb-5" src="/data/articles/feature-varying-skeletonization/paper-5.png">
+<img class="paper-thumb-5" src="/data/articles/feature-varying-skeletonization/paper-6.png">
+<img class="paper-thumb-5" src="/data/articles/feature-varying-skeletonization/paper-7.png">
+<img class="paper-thumb-5" src="/data/articles/feature-varying-skeletonization/paper-8.png">
+<img class="paper-thumb-5" src="/data/articles/feature-varying-skeletonization/paper-9.png"></p>
+<p><a href="https://doi.org/10.1007/s00371-012-0688-x">Click to <strong>go to full publication on Springer Link</strong>.</a></p>
+<h3 id="abstract">Abstract</h3>
+<p>Current skeletonization algorithms strive to produce a single centered result which is homotopic and insensitive to surface noise. However, this traditional approach may not well capture the main parts of complex models, and may even produce poor results for applications such as animation. Instead, we approximate model topology through a target feature size ω, where undesired features smaller than ω are smoothed, and features larger than ω are retained into groups called bones. This relaxed feature-varying strategy allows applications to generate robust and meaningful results without requiring additional parameter tuning, even for damaged, noisy, complex, or high genus models.</p>
+<h3 id="overview">Overview</h3>
+<p>Given an input dense 3D mesh, it presents an intuitive algorithm to iterateively contract the mesh into a skeleton.</p>
+<p><img class="skel-thumb-5" src="/data/articles/feature-varying-skeletonization/0.png">
+<img class="skel-thumb-5" src="/data/articles/feature-varying-skeletonization/1.png">
+<img class="skel-thumb-5" src="/data/articles/feature-varying-skeletonization/2.png">
+<img class="skel-thumb-5" src="/data/articles/feature-varying-skeletonization/3.png">
+<img class="skel-thumb-5" src="/data/articles/feature-varying-skeletonization/4.png">
+<img class="skel-thumb-5" src="/data/articles/feature-varying-skeletonization/5.png"></p>
+<p>Simply, you have two forces:</p>
+<ol>
+<li><p>You iteratively smooth the mesh, by moving the vertices to their average location in their original one-ring neighbourhood.</p>
+</li>
+<li><p>You iterateively merge the mesh, by moving the vertices to the average position of any nearby vertices within some fixed Euclidean distance &omega;.</p>
+<ul>
+<li><em>For very simple implementations, you can store vertex id&#39;s in a grid and fetch nearby grid cells; it works more-or-less the same.</em></li>
+</ul>
+</li>
+</ol>
+<p>The final force that contracts the mesh is a simple linear interpolation between 1. and 2. governed by the one-ring neighbourhood surface area.</p>
+<p>While there are now better ways to generate curve skeletons, the nice little contribution with this at the time was its simplicity, and that it can make skeletons that are useful for animation with just a single parameter to adjust.</p>
+<div class="note info">
+  <h5>Key Advantages:</h5>
+  <p>
+   • Simplicity<br>
+   • Speed<br>
+   • Low parameters<br>
+  </p>
+</div>
+<p>It would be nice if this approach could be extended to the imaging domain; I briefly tried expressing similar concepts to the <em>merging</em> and <em>smoothing</em> with convolutions and got some interesting results, but I was unable to stop the skeleton overcontracting. The reason it stops overcontracting in the mesh geometry is because of perhaps an unexpected artifact whereby the vertices get pulled into groups &gt; &omega;. This is also a limitation of the method, in that the vertices can contract in an unpredictable way impacting the skeleton quality. I haven&#39;t thought much about extending this.</p>
+<h3 id="citation">Citation</h3>
+<p>Please cite the paper:
+<code>
+<pre>
+@article{willcocks-2012-feature-varying-skeletonization,
+   author    = {Chris G. Willcocks and Frederick W. B. Li},
+   title     = {Feature-varying skeletonization - Intuitive control over the target feature size and output skeleton topology},
+   journal   = {The Visual Computer},
+   volume    = {28},
+   number    = {6-8},
+   pages     = {775--785},
+   year      = {2012},
+   url       = {<a href="http://dx.doi.org/10.1007/s00371-012-0688-x}">http://dx.doi.org/10.1007/s00371-012-0688-x}</a>,
+   doi       = {10.1007/s00371-012-0688-x}
+}
+</pre>
+</code>
+</p>
+<a href="#top">[return to top]</a>
+</div>
+</div>
+</html>
