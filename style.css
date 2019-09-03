@@ -25,6 +25,10 @@ hr {
 	height:0;
 }
 
+li {
+	margin: 2px 0;
+}
+
 li.x {
 	margin: 10px 0;
 }
