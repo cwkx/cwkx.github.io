@@ -27,6 +27,7 @@
 <div id="nav">
   <ul>
   <li><a href="#news"><b>news</b></a></li>
+  <li><a href="#multiscale">multiscale 3d macular segmentation</a></li>
   <li><a href="#extract3d">extracting 3d curves</a></li>
   <li><a href="#svd">sparse volumetric deformation</a></li>
   <li><a href="#fvs">feature-varying skeletonization</a></li>
@@ -36,6 +37,54 @@
 <div id="main">
 <h2 id="news">Research News</h2>
 <p>This sections contains quick summaries about selected research articles.</p>
+
+<hr>
+<h1 id="multiscale">Multi-Scale Segmentation and Surface Fitting for Measuring 3D Macular Holes</h1>
+<p><em>Selected photos from 2013 thesis below:</em></p>
+<p>
+<img class="paper-thumb-7" src="/data/articles/multiscale-3d-macular/paper-1.png">
+<img class="paper-thumb-7" src="/data/articles/multiscale-3d-macular/paper-3.png">
+<img class="paper-thumb-7" src="/data/articles/multiscale-3d-macular/paper-4.png">
+<img class="paper-thumb-7" src="/data/articles/multiscale-3d-macular/paper-6.png">
+<img class="paper-thumb-7" src="/data/articles/multiscale-3d-macular/paper-7.png">
+<img class="paper-thumb-7" src="/data/articles/multiscale-3d-macular/paper-8.png">
+<img class="paper-thumb-7" src="/data/articles/multiscale-3d-macular/paper-9.png">
+<img class="paper-thumb-7" src="/data/articles/multiscale-3d-macular/paper-10.png">
+</p>
+<p><a href="https://ieeexplore.ieee.org/document/8089387">Click to <strong>go to full publication on IEEE Explore</strong>.</a></p>
+<h3>Abstract</h3>
+<p>
+Macular holes are blinding conditions, where a hole develops in the central part of retina, resulting in reduced central vision. The prognosis and treatment options are related to a number of variables, including the macular hole size and shape. High-resolution spectral domain optical coherence tomography allows precise imaging of the macular hole geometry in three dimensions, but the measurement of these by human observers is time-consuming and prone to high inter- and intra-observer variability, being characteristically measured in 2-D rather than 3-D. We introduce several novel techniques to automatically retrieve accurate 3-D measurements of the macular hole, including: surface area, base area, base diameter, top area, top diameter, height, and minimum diameter. Specifically, we introduce a multi-scale 3-D level set segmentation approach based on a state-of-the-art level set method, and we introduce novel curvature-based cutting and 3-D measurement procedures. The algorithm is fully automatic, and we validate our extracted measurements both qualitatively and quantitatively, where our results show the method to be robust across a variety of scenarios. Our automated processes are considered a significant contribution for clinical applications.
+</p>
+<h3>Overview</h3>
+<p>Given a 3D OCT image of a Macular Hole, this paper presents a fast and accurate fully-automated 3D level set segmentation method.</p>
+<center>
+<img width="100%" src="/data/articles/multiscale-3d-macular/method.png">
+</center>
+The method automatically outputs several metrics and measurements using novel methods, and is shown to give state-of-the-art performance in comparrison to previous approaches.<br><br>
+<center>
+<img width="50%" src="/data/articles/multiscale-3d-macular/outputs.png">
+</center>
+<h3 id="citation">Citation</h3>
+<p>Please cite the article with:</p>
+<p>
+<code>
+  <pre>
+      @article{nasrulloh2017multiscale,
+        author   = {A. V. Nasrulloh and C. G. Willcocks and P. T. G. Jackson and C. Geenen and M. S. Habib and D. H. W. Steel and B. Obara},
+        journal  = {IEEE Transactions on Medical Imaging},
+        title    = {Multi-scale Segmentation and Surface Fitting for Measuring 3D Macular Holes},
+        year     = {2018},
+        month    = {2},
+        volume   = {37},
+        pages    = {580-589},
+        doi      = {10.1109/TMI.2017.2767908},
+        ISSN     = {0278-0062}
+      }
+  </pre>
+</code>
+</p>
+
 <hr>
 <h1 id="extract3d">Extracting 3D Parametric Curves from 2D Images of Helical Objects</h1>
 <p><strong>Chris Willcocks</strong>, Philip Jackson, Carl Nelson, and Boguslaw Obara</p>
