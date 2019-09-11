@@ -7,6 +7,7 @@ import codecs
 import latexcodec
 import fileinput
 import re
+import time
 from pybtex.plugin import find_plugin
 from pybtex.database import parse_string
 
