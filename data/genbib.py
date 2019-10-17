@@ -11,7 +11,7 @@ import time
 from pybtex.plugin import find_plugin
 from pybtex.database import parse_string
 
-selected_publications = ['nasrulloh2017multiscale', 'willcocks2017interactive', 'ackay2017onusing', 'willcocks2017extracting']
+selected_publications = ['ramaswamy2019learning', 'nasrulloh2017multiscale', 'willcocks2017interactive', 'ackay2017onusing', 'willcocks2017extracting']
 
 APA = find_plugin('pybtex.style.formatting', 'apa')()
 HTML = find_plugin('pybtex.backends', 'html')()
