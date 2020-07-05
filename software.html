@@ -12,7 +12,7 @@
 <div id="header">
   <img src="/data/logo.svg" alt=""/>&nbsp;
   <span id="headerLink">cwkx.com</span>
-  <span id="headerSubtitle">Computer Science Research Group</span>
+  <span id="headerSubtitle">Research Group</span>
 </div>
 <hr class="hidden"/>
 <div id="menu">
@@ -22,7 +22,6 @@
   <a href="research.html">Research</a>
   <a href="teaching.html">Teaching</a>
   <a href="software.html"><b>Software</b></a>
-  <a href="games.html">Games</a>
 </div>
 <hr class="hidden"/>
 <div id="content">
@@ -33,6 +32,16 @@
   <li><a href="#abi">abi</a></li>
   <li><a href="#keym">keym</a></li>
   <li><a href="#painter">painter</a></li>
+  <li><a href="#games"><b>games</b></a></li>
+  <li><a href="#ruinstorm">ruinstorm</a></li>
+  <li><a href="#jungleventure">jungle venture</a></li>
+  <li><a href="#rarrgh">rarrgh!</a></li>
+  <li><a href="#starshipforces">starship forces</a></li>
+  <li><a href="#ludumdare">ludum dare</a></li>
+  <li><a href="#lunarlander">lunar lander</a></li>
+  <li><a href="#starshipphysics">starship physics</a></li>
+  <li><a href="#youonlygetone">you only get one</a></li>
+  <li><a href="#comehome">come home</a></li>
   </ul>
 </div>
 <hr class="hidden"/>
@@ -115,7 +124,161 @@
 </li>
 <li>Painting supports working on rotated/scaled/offset sprites</li>
 </ul>
-Sources for this software can be <a href="https://github.com/cwkx/godot-pixel-painter">downloaded here</a>. MIT &copy; Chris G. Willcocks<br><br>
+Sources for this software can be <a href="https://github.com/cwkx/godot-pixel-painter">downloaded here</a>. MIT &copy; Chris G. Willcocks<br>
+<br>
+<hr>
+<h2 id="games">Games</h2>
+<p>Game development has been a hobby of mine since a very young age. I like that it encompases music composition and performance, creative writing, as well as many areas of computer science (physics, networking, audio design, modelling, graphics).</p>
+<p>Firstly, here are just some general opinions that i&#39;ve picked up over the years. They will probably become outdated quickly (maybe they already are).</p>
+<ol>
+<li>Make games not engines!<ul>
+<li>If you want to make engines, make games!</li>
+</ul>
+</li>
+<li>Start with <a href="https://godotengine.org/">Godot</a> (small 2D/3D), <a href="https://unity3d.com/">Unity3D</a> (big 3D games), or <a href="https://impactjs.com/">Impact</a> (for lightweight 2D HTML5)<ul>
+<li>You will learn a lot more about <a href="https://www.reddit.com/r/gamedev">gamedev</a> than you can ever be taught in a module or read online by actually following tutorials &amp; making games with these first.</li>
+<li>I recommend Godot as its <a href="https://github.com/godotengine/godot">open source</a> under the <a href="https://tldrlegal.com/license/mit-license">MIT license</a> and personally, having made 2D and 3D games with both Godot and Unity3D, think it is much better designed.</li>
+<li>Also, if you want to work in the industry, make a demo with Unreal Engine.</li>
+</ul>
+</li>
+<li>Don&#39;t worry about what language you use.<ul>
+<li>&quot;Oh its not in C++&quot;, &quot;Oh its not in Python&quot;</li>
+<li>Spend 2 days learning whatever it is the game engine or tool you want uses and respect its decisions and force yourself to love its syntax.</li>
+<li>Either decide that all languages are great and worth learning, or decide that all languages suck and you&#39;ve got no choice. Just don&#39;t decide that language X is your true love.</li>
+</ul>
+</li>
+<li>Make your games with cubes or squares first.<ul>
+<li>Get the <strong>core mechanic</strong> and <strong>game states</strong> working with squares or cubes.</li>
+<li>For new game ideas, set your scope minimal so that you can finish programming core mechanic and states within 2-days.</li>
+</ul>
+</li>
+</ol>
+<h3 id="art-music">Art &amp; Music</h3>
+<p>Below are some tools that I find useful.</p>
+<ul>
+<li><a href="https://www.blender.org/">Blender</a><ul>
+<li>Steep learning curve but worth it for 3D games.</li>
+</ul>
+</li>
+<li><a href="https://www.aseprite.org/">Aseprite</a><ul>
+<li>I prefer it to Pyxel Edit for pixel art despite a slightly steeper learning curve.</li>
+</ul>
+</li>
+<li><a href="https://github.com/cwkx/godot-pixel-painter">Godot Pixel Painter</a><ul>
+<li>My software - I prefer it to Spine for pixel art as it removes the need for two tools (painting and animation) from the game engine editor. It may need a minor update with recent versions.</li>
+</ul>
+</li>
+<li><a href="http://milkytracker.titandemo.org/">Milkytracker</a><ul>
+<li>Start with <a href="https://www.youtube.com/watch?v=N2s04YYO0Wg">Brandon Walsh</a> on Youtube.</li>
+</ul>
+</li>
+<li><a href="http://github.grumdrig.com/jsfxr/">JSFXR</a><ul>
+<li>Easy to get retro sound effects, otherwise take a microphone out into the park.</li>
+</ul>
+</li>
+<li><a href="https://www.archlinux.org/">Arch Linux</a><ul>
+<li>Not related but obligatory mention.</li>
+</ul>
+</li>
+</ul>
+
+<hr>
+<h1 id="ruinstorm">Ruinstorm</h1>
+<p>Ruinstorm is a long-term hobby that i&#39;ve been developing on-and-off with <a href="https://eysventura.wordpress.com/">Sven</a> over the years. The game has changed massively in scope since its initial concept, but I love chipping away at it every now and then. Will probably still be working on it when i&#39;m an old man... </p><p><b>Quick Summary:</b> A physics-based ARPG platformer where you can chop up everything. Want that piece of armour? Cut it off the dudes body and pick it up. Need to escape the arena? Pile up the bodies and you can climb over them to get out.</p>
+<center>
+<img src="/data/games/ruinstorm/s0.png" width="75%" style="image-rendering: pixelated;">
+</center>
+<p>The protagonist encounters increasingly unlikely magical creatures as he ventures onwards looking for answers to his demise. Ruinstorm is the name of the dark and feared land east of the old kingdom. </p>
+<center>
+<img src="/data/games/ruinstorm/s1.png" width="75%" style="image-rendering: pixelated;">
+</center>
+<p>Responsive retro-style platforming, combined with physically based animation, modular gear, and deterministic AI. Also features an original dark and gritty chiptune score composed with MilkyTracker. </p>
+<h3 id="dev-videos">Dev Videos</h3>
+<p>• <a href="/data/games/ruinstorm/vid-cut.mp4">Early version chopping stuff up</a><br>
+• <a href="/data/games/ruinstorm/vid-ai.mp4">AI pathfinding</a><br>
+• <a href="/data/games/ruinstorm/vid-inv.mp4">Inventory</a><br></p>
+<center>
+<img src="/data/games/ruinstorm/s2.png" width="75%" style="image-rendering: pixelated;">
+</center>
+
+<hr>
+<h1 id="jungleventure">Jungle Venture</h1>
+<p>Jungle Venture is a game that I developed for EMVigR. The game is intended to be played by stroke patients, who control it through simple motion gestures which are later reviewed by a therapist. The game is an infinite side-scroller with swinging, swimming, jumping, rope physics, throwing, and volcanoes.</p>
+<h3 id="screenshots">Screenshots</h3>
+<p>Title Screen:</p>
+<center>
+<img src="/data/games/jungle-venture/intro.png" width="100%">
+</center>
+<p>Physically-based rope swinging:</p>
+<center>
+<img src="/data/games/jungle-venture/swing.png" width="100%">
+</center>
+<p>Swimming:</p>
+<center>
+<img src="/data/games/jungle-venture/swim.png" width="100%">
+</center>
+<p>Jumping:</p>
+<center>
+<img src="/data/games/jungle-venture/jump.png" width="100%">
+</center>
+<p>Throwing stones at rhinos:</p>
+<center>
+<img src="/data/games/jungle-venture/rhino.png" width="100%">
+</center>
+<p>Volcanoes:</p>
+<center>
+<img src="/data/games/jungle-venture/volcano.png" width="100%">
+</center>
+
+<hr>
+<h1 id="rarrgh">Rarrgh!</h1>
+<p>Rarrgh! was one of my first 3D games. Play in an online world with caveman and procedural animation. While it only ever existed in alpha stage, it was fun to develop and play during my undergraduate.</p>
+<h3 id="screenshots">Screenshots</h3>
+<center>
+<img src="/data/games/rarrgh/s3.jpg" width="100%">
+</center>
+<center>
+<img src="/data/games/rarrgh/s2.jpg" width="100%">
+</center>
+<center>
+<img src="/data/games/rarrgh/s1.jpg" width="100%">
+</center>
+
+<hr>
+<h1 id="starshipforces">Starship Forces</h1>
+<p>Starship forces was a 3D game I developed in Unity3D.</p>
+<p><img src="/data/games/starship-forces/title.png" width="100%"></p>
+<p>The game had a number of interesting features including a multiplayer lobby (staging area), my implementation of the <a href="http://transvoxel.org">Transvoxel Algorithm</a> which was used to render large planets at multiple levels of detail. This was integrated to the Unity3D scene hierarchy and the processing was multi-threaded.</p>
+<p><img src="/data/games/starship-forces/game.png" width="100%"></p>
+<p>Starship forces used many custom shaders, including triplanar texutre mapping and procedural noise. It also used a custom imposter system I developed called <a href="/software.html#abi">ABI</a>, which could render thousands of objects (e.g. trees and ground units) in Unity3D efficiently. I went on to sell ABI.</p>
+<p>The main problem with starship forces was that I spent too long on unique tech and suffered quick burnout. The game itself was too dependent on 3rd party assets and didn&#39;t have any particular core &quot;fun&quot; mechanic. I entered <a href="http://ludumdare.com">Ludum Dare</a> which shifted my focus to completing smaller more managable projects.</p>
+
+<hr>
+<h1 id="ludumdare">Ludum Dare Competitions</h1>
+<p>All of the remaining games were made for ludum dare, a game competition where you have to finish a game from scratch for a given theme in <b>48 hours or less</b>. </p>
+<h3 id="lunarlander">Ludum Lander</h3>
+<p>Physics based shooting of weird mechanical dust monsters that invade your small island. The Ludum Dare theme was "A Small World". </p>
+<p><img src="/data/games/ludum-lander/s0.png" width="100%" style="image-rendering: pixelated;"></p>
+<h3 id="starshipphysics">Starship Physics</h3>
+<p>A physics-based game where you shoot ships, pick up their pixels and build/upgrade your ship with the resources. Different color pixels do different things, such as laser, hull, and shield. The stronger your ship, the stronger the enemies become. The Ludum Dare theme was "10 seconds" incoporated into the building mechanic.</p>
+<p>
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/kQJnf0-a6Eg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<img src="/data/games/starship-physics/s1.png" width="100%" style="image-rendering: pixelated;">
+<img src="/data/games/starship-physics/s2.png" width="100%" style="image-rendering: pixelated;">
+<img src="/data/games/starship-physics/s3.png" width="100%" style="image-rendering: pixelated;">
+<img src="/data/games/starship-physics/s4.png" width="100%" style="image-rendering: pixelated;"></p>
+<h3 id="youonlygetone">You Only Get One Cube</h3>
+<p>A game made in 5 hours from scratch, where you have to avoid cubes flying towards you. When your red cube hits another it splits into pieces recursively until you control a swarm of mini cubes. The cubes eventually get so small they disappear and the goal is to last as long as possible. The Ludum Dare theme was "You Only Get One" as you start out with just one big red cube.</p>
+<p><img src="/data/games/you-only-get-one/s0.png" width="100%" style="image-rendering: pixelated;">
+<img src="/data/games/you-only-get-one/s1.png" width="100%" style="image-rendering: pixelated;">
+<img src="/data/games/you-only-get-one/s2.png" width="100%" style="image-rendering: pixelated;"></p>
+<h3 id="comehome">Come Home</h3>
+<p>An emo game about a girl who squandered her life, the theme was "beneath the surface".</p>
+<center>
+<img src="/data/games/come-home/s0.png" width="25%" style="image-rendering: pixelated;">
+<img src="/data/games/come-home/s1.png" width="25%" style="image-rendering: pixelated;">
+</center>
+<br>
 <a href="#top">[return to top]</a>
 </div>
 </div>

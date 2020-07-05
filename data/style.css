@@ -4,8 +4,8 @@ html {
 
 body {
 	background-color: #fff;
-	color: #000;
-	font-family: sans-serif;
+	color: #525c60;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	padding: 0;
 	margin: 0;
 }
@@ -15,14 +15,14 @@ pre, code {
 }
 
 a {
-	color: #005386;
+	color: #606c71;
 }
 
 hr {
 	border: 0 none;
 	border-top: 1.5px dashed #aaa;
 	background: none;
-	height:0;
+	height: 0;
 }
 
 li {
@@ -43,12 +43,10 @@ li.x {
 
 #menu {
 	clear: both;
-	color: #069;
+	color: #525c60;
 	overflow: hidden;
-	background-color: #17a;
-	padding: 0.7ex;
-	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #069;
+	background-color: #75858a;
+	padding: 0.3ex;
 }
 
 #menu a {
@@ -57,7 +55,7 @@ li.x {
 }
 
 #menu a:hover {
-	background-color: #069;
+	background-color: #525c60;
 }
 
 #header {
@@ -65,12 +63,19 @@ li.x {
 	clear: both;
 	color: #555;
 	font-size: 1.78em;
-	padding: 0.7ex 0.7ex 0.7ex 0.7em;
+	padding: 0.4ex 0.0ex 0.4ex 0.7em;
 }
 
 #headerLink {
-	color: #17a;
-	margin-left: 5px;
+	color: #6a777c;
+	margin-left: 2px;
+	font-size: 1.5rem;
+}
+
+#headerSubtitle {
+	color: #525c60;
+	font-size: 0.75em;
+	margin-left: 0.5em;
 }
 
 h1 {
@@ -79,7 +84,7 @@ h1 {
 }
 
 h2 {
-	margin: 1em 1ex 0.5ex 0;
+	margin: 0.5em 1ex 0.5ex 0;
 	font-size: 1.3em;
 }
 
@@ -91,12 +96,6 @@ h3 {
 h4 {
 	margin: 1em 1ex 0.5ex 0;
 	font-size: 0.9em;
-}
-
-#headerSubtitle {
-    color: #222;
-	font-size: 0.75em;
-	margin-left: 1em;
 }
 
 #content {
@@ -135,7 +134,7 @@ h4 {
 
 #main {
 	margin: 0 0 0 200px;
-    max-width: 50em;
+	max-width: 50em;
 	padding: 1.5em;
 }
 
@@ -156,25 +155,33 @@ h4 {
 }
 
 .paper-thumb-7 {
-	background-color:#ffffff;
+	background-color: #ffffff;
 	width: 12%;
 	display: inline-block;
- }
- 
- .paper-thumb-5 {
-	background-color:#ffffff;
+}
+
+.paper-thumb-5 {
+	background-color: #ffffff;
 	width: 18%;
 	display: inline-block;
- }
- 
- .skel-thumb-5 {
+}
+
+.skel-thumb-5 {
 	width: 15%;
 	display: inline-block;
- }
- 
+}
+
 .center {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	width: 50%;
+}
+
+.info {
+    background-color: #f2f2f2;
+    border-left: 6px solid #b2b2b2;
+	border-radius: 0px 10px 10px 0px;
+    margin-bottom: 15px;
+    padding: 4px 12px;
 }
