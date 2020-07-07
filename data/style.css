@@ -46,7 +46,9 @@ li.x {
 	color: #525c60;
 	overflow: hidden;
 	background-color: #75858a;
-	padding: 0.3ex;
+	padding-left: 0.3ex;
+	padding-top: 0.5ex;
+	padding-bottom: 0.4ex;
 }
 
 #menu a {
