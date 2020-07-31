@@ -30,25 +30,25 @@
             </div>
         </div>
         <div class="info">
-            <p><strong>Abstract</strong> This paper proposes a new type of implicit generative model that is able to quickly learn a latent representation without an explicit encoder. This is achieved with an implicit neural network that takes as inputs points in the coordinate space alongside a latent vector initialised with zeros. The gradients of the data fitting loss with respect to this zero vector are jointly optimised to act as latent points that capture the data manifold. The results show similar characteristics to autoencoders, but with fewer parameters and the advantages of implicit representation networks.</p>
+            <p><strong>Abstract</strong> This paper proposes a new type of generative model that is able to quickly learn a latent representation without an encoder. This is achieved by initialising a latent vector with zeros, then using gradients of the data fitting loss with respect to this zero vector as new latent points. The approach has similar characteristics to autoencoders but with a simpler naturally balanced architecture, and is demonstrated in a variational autoencoder equivalent that permits sampling. This also allows implicit representation networks to learn a space of implicit functions without requiring a hypernetwork, retaining their representation advantages with fewer parameters.</p>
         </div>
         <div class="icons">
             <a href="https://arxiv.org/abs/2007.02798"><i class="fa fa-book" aria-hidden="true"></i><span style=""> arXiv</span></a>
             <a href="https://arxiv.org/pdf/2007.02798.pdf"><i class="fa fa-file-pdf-o" aria-hidden="true"></i><span style=""> Paper</span></a>
             <a href="https://github.com/cwkx/GON"><i class="fa fa-github" aria-hidden="true"></i><span style=""> Code</span></a>
-            <a href="https://youtu.be/ro7t98Q1gXg"><i class="fa fa-youtube" aria-hidden="true"></i><span style=""> YouTube</span></a>
+            <!--<a href="https://youtu.be/ro7t98Q1gXg"><i class="fa fa-youtube" aria-hidden="true"></i><span style=""> YouTube</span></a>-->
             <a href="https://colab.research.google.com/gist/cwkx/8c3a8b514f3bdfe123edc3bb0e6b7eca/gon.ipynb"><i class="fa fa-google" aria-hidden="true"></i><span style=""> Colab</span></a>
             <a href="mailto:samuel.e.bond-taylor@durham.ac.uk,christopher.g.willcocks@durham.ac.uk"><i class="fa fa-envelope-o" aria-hidden="true"></i><span style=""> Contact</span></a>
             <a href="https://twitter.com/cwkx/status/1281180601945653248"><i class="fa fa-retweet" aria-hidden="true"></i><span style=""> Tweet</span></a>
         </div>
         <h2>Approach</h2>
         <p>
-            Gradient Origin Networks (GONs) are comparable to Variational Autoencoders in that both compress data into latent representations and permit sampling in a single step. However, GONs use gradients as encodings meaning that they have a much simpler architecture:
+            Gradient Origin Networks (GONs) are comparable to Variational Autoencoders in that both compress data into latent representations and permit sampling in a single step. However, GONs use gradients as encodings meaning that they have a simpler architecture with only a decoder network:
         </p>
         <table class="spaced">
             <tr>
                 <td><img style="vertical-align:middle; width:auto; height: 120px;" alt="Variational Autoencoder" src="data/vae.png"></td>
-                <td><img style="vertical-align:middle; width:auto; height: 92.4px;" alt="Gradient Origin Network" src="data/gon.png"></td>
+                <td><img style="vertical-align:middle; width:auto; height: 65px;" alt="Gradient Origin Network" src="data/gon.png"></td>
             </tr>
             <tr>
                 <td>Variational Autoencoder</td>
@@ -56,10 +56,10 @@
             </tr>
         </table>
         <p>
-            In Gradient Origin Networks, unknown parameters in the latent space are initialised at the origin. This zero vector is concatenated with the known coordinate parameters, which becomes the inputs of an implicit representation network <i>F</i> with a prior over the gradients (a <a href="https://vsitzmann.github.io/siren/">SIREN</a> whose gradients are normally distributed). This means we can compute gradients of the data fitting loss with respect to these inputs, and jointly optimise for the new latents:
+            In Gradient Origin Networks, unknown parameters in the latent space are initialised at the origin, then the gradients of the data fitting loss with respect to these points are used as the latent space. This process is jointly optimised with the reconstructed data, by minimising the GON loss function:
         </p>
 
-        <img class="center" alt="Gradient Origin Network" src="data/gon-eqn.png">
+        <img class="center" alt="Gradient Origin Network" src="data/gon-eqn.png" style="vertical-align:middle; width:auto; height: 24px;">
         <p>At inference, the latent vector can be sampled in a single step without requiring iteration. Here are some random spherical interpolations showing this:</p>
 
         <table class="squashed" style="margin-top: 3ex; margin-bottom: 3ex;">
@@ -90,14 +90,14 @@
             </tr>
         </table>
 
-        <h2>YouTube video</h2>
+        <!-- <h2>YouTube video</h2>
 
-        <iframe width="100%" height="430" style="background-color: #FFFFFF" src="https://www.youtube.com/embed/ro7t98Q1gXg?transparent=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="100%" height="430" style="background-color: #FFFFFF" src="https://www.youtube.com/embed/ro7t98Q1gXg?transparent=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
-        <p>In practice, we find GONs to be parameter-efficient and fast to train. For more details, please watch the YouTube video and read the paper in the links above.</p>
+        <p>In practice, we find GONs to be parameter-efficient and fast to train. For more details, please <!--watch the YouTube video and--> read the paper in the link<!--s--> above.</p>
 
         <div class="info">
-            <p><strong>Conclusion</strong> We have proposed a new type of implicit generative model that captures the dataset without requiring an explicit encoder. By initialising a latent vector of our unknown parameters with zeros, we have shown that it is possible to compute the gradients of the data fitting loss with respect to this origin, and then jointly fit the data while learning this new point of reference in the latent space. The results show this approach is able to represent datasets using a small number of parameters, with the advantage of implicit representation networks being able to model many different types of discrete signals.</p>
+            <p><strong>Conclusion</strong> We have proposed a new type of generative model that captures the dataset without requiring an encoder. By initialising a latent vector of our unknown parameters with zeros, we have shown that it is possible to compute the gradients of the data fitting loss with respect to this origin, and then jointly fit the data while learning this new point of reference in the latent space. The results show this approach is able to represent datasets using a small number of parameters with a simpler architecture, which has advantages in applications such as implicit representation networks.</p>
         </div>
         <h2>Citation</h2>
         <div class="bibtex">

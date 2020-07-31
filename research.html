@@ -42,12 +42,12 @@
 <hr>
 <h1 id="multiscale">Gradient Origin Networks</h1>
 <p>
-  <a href="/data/GON/">Gradient Origin Networks (GONs)</a> are comparable to Variational Autoencoders in that both compress data into latent representations and permit sampling. However, GONs use gradients as encodings meaning that they have a much simpler architecture:
+  <a href="/data/GON/">Gradient Origin Networks (GONs)</a> are comparable to Variational Autoencoders in that both compress data into latent representations and permit sampling in a single step. However, GONs use gradients as encodings meaning that they have a simpler architecture with only a decoder network:
 </p>
 <table style="border-spacing: 50px 0;">
   <tr>
       <td><img style="vertical-align:middle; width:auto; height: 120px;" alt="Variational Autoencoder" src="data/GON/data/vae.png"></td>
-      <td><img style="vertical-align:middle; width:auto; height: 92.4px;" alt="Gradient Origin Network" src="data/GON/data/gon.png"></td>
+      <td style="text-align:center;"><img style="vertical-align:middle; width:auto; height: 65px;" alt="Gradient Origin Network" src="data/GON/data/gon.png"></td>
   </tr>
   <tr>
       <td>Variational Autoencoder</td>
@@ -55,7 +55,7 @@
   </tr>
 </table>
 <p>
-  In Gradient Origin Networks, unknown parameters in the latent space are initialised at the origin. This zero vector is concatenated with the known coordinate parameters, which becomes the inputs of an implicit representation network <i>F</i> with a prior over the gradients (a SIREN whose gradients are normally distributed). This means we can compute gradients of the data fitting loss with respect to these inputs, and jointly optimise for the new latents. At inference, the latent vector can be sampled in a single step without requiring iteration. Here are some random spherical interpolations showing this:</p>
+  In Gradient Origin Networks, unknown parameters in the latent space are initialised at the origin, then the gradients of the data fitting loss with respect to these points are used as the latent space. At inference, the latent vector can be sampled in a single step without requiring iteration. Here are some random spherical interpolations showing this:</p>
 
 <table style="margin-top: 3ex; margin-bottom: 3ex; text-align: center;">
   <tr>
