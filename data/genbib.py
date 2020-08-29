@@ -11,7 +11,7 @@ import time
 from pybtex.plugin import find_plugin
 from pybtex.database import parse_string
 
-selected_publications = ['ramaswamy2019learning', 'ackay2017onusing', 'nasrulloh2017multiscale', 'willcocks2017interactive', 'willcocks2017extracting']
+selected_publications = ['bond2020gradient', 'ramaswamy2019learning', 'ackay2017onusing', 'nasrulloh2017multiscale', 'willcocks2017extracting']
 
 APA = find_plugin('pybtex.style.formatting', 'apa')()
 HTML = find_plugin('pybtex.backends', 'html')()
@@ -93,7 +93,7 @@ with open('../publications.html', "w") as f:
 
 time.sleep(0.5)
 
-html = bib2html(data, keys=filter_by(data, words=['Review']))
+html = bib2html(data, keys=filter_by(data, words=['Preprint']))
 loc = '<!--GENERATED-REVIEW-->'
 end = '<!--END-REVIEW-->'
 with open('../publications.html') as f:
