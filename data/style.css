@@ -112,6 +112,9 @@ h4 {
 	margin: 0 1px 0 0;
 	padding: 1em 0;
 	width: 200px;
+	top: 0;
+	position: -webkit-sticky;
+	position: sticky;
 }
 
 #nav ul {
@@ -189,11 +192,17 @@ h4 {
 	padding: 4px 12px;
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 720px) {
 	#nav {
 		display: none;
 	}
 	#main {
 		margin: 0 0 0 0px;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	#headerSubtitle {
+		display: none;
 	}
 }
