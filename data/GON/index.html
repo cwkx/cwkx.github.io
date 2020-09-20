@@ -45,16 +45,18 @@
         <p>
             Gradient Origin Networks (GONs) are comparable to Variational Autoencoders in that both compress data into latent representations and permit sampling in a single step. However, GONs use gradients as encodings meaning that they have a simpler architecture with only a decoder network:
         </p>
-        <table class="spaced">
-            <tr>
-                <td><img style="vertical-align:middle; width:auto; height: 120px;" alt="Variational Autoencoder" src="data/vae.png"></td>
-                <td><img style="vertical-align:middle; width:auto; height: 65px;" alt="Gradient Origin Network" src="data/gon.png"></td>
-            </tr>
-            <tr>
-                <td>Variational Autoencoder</td>
-                <td>Gradient Origin Network</td>
-            </tr>
-        </table>
+        <div style="overflow-x:auto;">
+            <table class="spaced">
+                <tr>
+                    <td><img style="vertical-align:middle; width:auto; height: 120px;" alt="Variational Autoencoder" src="data/vae.png"></td>
+                    <td><img style="vertical-align:middle; width:auto; height: 65px;" alt="Gradient Origin Network" src="data/gon.png"></td>
+                </tr>
+                <tr>
+                    <td>Variational Autoencoder</td>
+                    <td>Gradient Origin Network</td>
+                </tr>
+            </table>
+        </div>
         <p>
             In Gradient Origin Networks, unknown parameters in the latent space are initialised at the origin, then the gradients of the data fitting loss with respect to these points are used as the latent space. This process is jointly optimised with the reconstructed data, by minimising the GON loss function:
         </p>
@@ -62,33 +64,35 @@
         <img class="center" alt="Gradient Origin Network" src="data/gon-eqn.png" style="vertical-align:middle; width:auto; height: 24px;">
         <p>At inference, the latent vector can be sampled in a single step without requiring iteration. Here are some random spherical interpolations showing this:</p>
 
-        <table class="squashed" style="margin-top: 3ex; margin-bottom: 3ex;">
-            <tr>
-                <td> 
-                    <video width="240" height="240" autoplay loop>
-                        <source src="data/mnist-slerp.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </td>
-                <td> 
-                    <video width="240" height="240" autoplay loop>
-                        <source src="data/fashion-slerp.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </td>
-                <td>
-                    <video width="240" height="240" autoplay loop>
-                        <source src="data/coil-slerp.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </td>
-            </tr>
-            <tr>
-                <td>MNIST</td>
-                <td>FashionMNIST</td>
-                <td>COIL20</td>
-            </tr>
-        </table>
+        <div style="overflow-x:auto;">
+            <table class="squashed" style="margin-top: 3ex; margin-bottom: 3ex;">
+                <tr>
+                    <td> 
+                        <video width="240" height="240" autoplay loop>
+                            <source src="data/mnist-slerp.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </td>
+                    <td> 
+                        <video width="240" height="240" autoplay loop>
+                            <source src="data/fashion-slerp.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </td>
+                    <td>
+                        <video width="240" height="240" autoplay loop>
+                            <source src="data/coil-slerp.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </td>
+                </tr>
+                <tr>
+                    <td>MNIST</td>
+                    <td>FashionMNIST</td>
+                    <td>COIL20</td>
+                </tr>
+            </table>
+        </div>
 
         <!-- <h2>YouTube video</h2>
 
@@ -108,5 +112,6 @@
   year={2020}
 }</code></pre>
         </div>
+        <a href="../../research.html"><i class="fa fa-home" aria-hidden="true"></i> Click to return to parent site</a>
     </div>
 </body>

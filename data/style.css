@@ -12,6 +12,7 @@ body {
 
 pre, code {
 	margin: 0;
+	overflow-x: auto;
 }
 
 a {
@@ -181,9 +182,9 @@ h4 {
 }
 
 .info {
-    background-color: #f2f2f2;
-    border-left: 6px solid #b2b2b2;
+	background-color: #f2f2f2;
+	border-left: 6px solid #b2b2b2;
 	border-radius: 0px 10px 10px 0px;
-    margin-bottom: 15px;
-    padding: 4px 12px;
+	margin-bottom: 15px;
+	padding: 4px 12px;
 }
