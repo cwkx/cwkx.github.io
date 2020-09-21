@@ -11,7 +11,7 @@ body {
 code {
     font: 1rem Consolas, "Liberation Mono", Menlo, Courier, monospace;
     font-family: monospace, monospace;
-    font-size: 1em
+    font-size: 1em;
 }
 
 a {
@@ -93,4 +93,5 @@ span.spacer {
     background-color: #f2f2f2;
     font-size: 14px;
     border-radius: 10px;
+    overflow-x: auto;
 }
