@@ -11,7 +11,7 @@ import time
 from pybtex.plugin import find_plugin
 from pybtex.database import parse_string
 
-selected_publications = ['bond2020gradient', 'ramaswamy2019learning', 'nguyen2020unsupervised', 'bondtaylor2021deep']
+selected_publications = ['bondtaylor2021deep', 'ramaswamy2021deep', 'bond2020gradient', 'nguyen2020unsupervised']
 
 APA = find_plugin('pybtex.style.formatting', 'apa')()
 HTML = find_plugin('pybtex.backends', 'html')()

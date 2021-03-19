@@ -29,6 +29,7 @@
 <div id="nav">
   <ul>
     <li><a href="#"><b>research</b></a></li>
+  <li><a href="#dlproteins">deep learning proteins</a></li>
   <li><a href="#gons">gradient origin networks</a></li>
   <li><a href="#multiscale">multiscale 3d macular segmentation</a></li>
   <li><a href="#extract3d">extracting 3d curves</a></li>
@@ -40,6 +41,40 @@
 <div id="main">
 <h1>Research News</h1>
 <p>This sections contains quick summaries about selected research articles.</p>
+<hr>
+<h1 id="dlproteins">Deep Learning Protein Conformational Space with Convolutions and Latent Interpolations</h1>
+<p>
+  <a href="https://journals.aps.org/prx/abstract/10.1103/PhysRevX.11.011052">This work has been accepted at Physical Review X, 2021</a>. We present a convolutional neural network that learns a continuous conformational space representation from example structures, and loss functions that ensure intermediates between examples are physically plausible. We show that this network, trained with simulations of distinct protein states, can correctly predict a biologically relevant transition path, without any example on the path provided.
+</p>
+<center>
+  <img width="100%" src="/data/articles/research-news/dl-protein-space.png">
+  </center>
+<p>
+<p>
+  Proteins carry out a range of essential biological functions including catalysis, sensing, motility, transport, and defense. These molecules function independently or in unison with other molecules, such as DNA, drugs, or other proteins. To perform these functions, a protein must often change its shape (or conformation), but identifying the possible conformations of a protein is not an easy task. We present a methodology that combines molecular simulation and machine learning to discover transition paths between protein conformational states.
+</p>
+<p>
+Current experimental techniques provide a good picture of the most stable conformations and little to nothing on the transition path or intermediate states. Despite the importance of these intermediate conformations for pharmaceutical drug targeting purposes, determining them with high reliability remains a challenging problem. We overcome this hurdle with a neural network that can generate new protein conformations after being trained with examples from experiments or molecular simulations. The network is capable of generating structures that respect physical laws.
+</p>
+<h2>Citation</h2>
+<p>Please cite the article with:</p>
+<code>
+  <pre>
+@article{ramaswamy2021deep,
+  title     = {Deep Learning Protein Conformational Space with Convolutions and Latent Interpolations},
+  author    = {Ramaswamy, Venkata K. and Musson, Samuel C. and Willcocks, Chris G. and Degiacomi, Matteo T.},
+  journal   = {Phys. Rev. X},
+  volume    = {11},
+  issue     = {1},
+  pages     = {011052},
+  numpages  = {13},
+  year      = {2021},
+  month     = {Mar},
+  publisher = {American Physical Society},
+  doi       = {10.1103/PhysRevX.11.011052}
+}
+  </pre>
+</code>
 <hr>
 <h1 id="gons">Gradient Origin Networks</h1>
 <p>
