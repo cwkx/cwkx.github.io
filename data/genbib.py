@@ -1,5 +1,6 @@
 # script to automatically generate html from bibtex entries, will remove old html
 # requires pybtex, pybtex-apa-style
+# uses https://flamingtempura.github.io/bibtex-tidy/ with sort bibliography entries: "-year -month -day title author"
 
 import pybtex.database.input.bibtex
 import pybtex.plugin
@@ -11,7 +12,7 @@ import time
 from pybtex.plugin import find_plugin
 from pybtex.database import parse_string
 
-selected_publications = ['bondtaylor2021deep', 'ramaswamy2021deep', 'bond2020gradient', 'leach2022denoising']
+selected_publications = ['bond2023infty', 'bondtaylor2021deep', 'ramaswamy2021deep', 'bond2020gradient', 'leach2022denoising']
 
 APA = find_plugin('pybtex.style.formatting', 'apa')()
 HTML = find_plugin('pybtex.backends', 'html')()
