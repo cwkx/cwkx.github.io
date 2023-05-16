@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<!-- keyboard controls: M = mouse mode, S = slow mode, X = light mode -->
+<!-- keyboard controls: M = mouse mode, S = slow mode, X = light mode, P = play rain music (changes based on speed) -->
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -96,6 +96,48 @@
         let isMouseMode = false;
         let mouseX = 0;
         let mouseY = 0;
+
+        let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        let rainSound, birdsSound;
+        let rainSoundAndGain, birdsSoundAndGain;
+
+        fetch('data/misc/rain.mp3')
+            .then(response => response.arrayBuffer())
+            .then(arrayBuffer => audioCtx.decodeAudioData(arrayBuffer))
+            .then(audioBuffer => {
+                rainSound = audioBuffer;
+            });
+
+        fetch('data/misc/birds.mp3')
+            .then(response => response.arrayBuffer())
+            .then(arrayBuffer => audioCtx.decodeAudioData(arrayBuffer))
+            .then(audioBuffer => {
+                birdsSound = audioBuffer;
+            });
+
+
+        let rainSource, birdsSource;
+        let gainNode = audioCtx.createGain();
+
+        function playSound(soundBuffer) {
+            let sourceNode = audioCtx.createBufferSource();
+            let gainNode = audioCtx.createGain();
+
+            sourceNode.buffer = soundBuffer;
+            sourceNode.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            sourceNode.loop = true;
+            sourceNode.start(0);
+
+            return { sourceNode, gainNode };
+        }
+
+        function stopSound(sourceAndGain) {
+            if (sourceAndGain) {
+                sourceAndGain.gainNode.gain.exponentialRampToValueAtTime(0.00001, audioCtx.currentTime + 2);
+                sourceAndGain.sourceNode.stop(audioCtx.currentTime + 2);
+            }
+        }
 
         const app = new PIXI.Application({
             view: document.getElementById('display'),
@@ -241,6 +283,8 @@
         });
 
         window.addEventListener('keydown', (event) => {
+            audioCtx.resume();
+
             switch (event.key) {
                 case 'x':
                     isLightMode = !isLightMode; // Toggle light mode
@@ -252,11 +296,48 @@
                         updateSpritesColor(darkModeColor); // Change sprites color to white
                     }
                     break;
+                case 'p':
+                    if (isSlowMode) {
+                        if (birdsSoundAndGain) {
+                            stopSound(birdsSoundAndGain);
+                            birdsSoundAndGain = null;
+                        } else {
+                            birdsSoundAndGain = playSound(birdsSound);
+                        }
+                    } else {
+                        if (rainSoundAndGain) {
+                            stopSound(rainSoundAndGain);
+                            rainSoundAndGain = null;
+                        } else {
+                            rainSoundAndGain = playSound(rainSound);
+                        }
+                    }
+                    break;
                 case 's':
-                    isSlowMode = !isSlowMode; // Toggle slow mode
+                    isSlowMode = !isSlowMode;
+                    if (rainSoundAndGain && isSlowMode) {
+                        stopSound(rainSoundAndGain);
+                        rainSoundAndGain = null;
+                        birdsSoundAndGain = playSound(birdsSound);
+                    } else if (birdsSoundAndGain) {
+                        stopSound(birdsSoundAndGain);
+                        birdsSoundAndGain = null;
+                        rainSoundAndGain = playSound(rainSound);
+                    }
                     break;
                 case 'm':
                     isMouseMode = !isMouseMode; // Toggle slow mode
+                    break;
+                case 'f':
+                    if (!document.fullscreenElement) {
+                        // If we are not in fullscreen mode, request fullscreen
+                        document.documentElement.requestFullscreen();
+                    } else {
+                        // If we are in fullscreen mode, exit fullscreen
+                        if (document.exitFullscreen) {
+                            document.exitFullscreen();
+                        }
+                    }
                     break;
             }
         });
