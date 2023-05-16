@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Maths screensaver</title>
+    <link rel="shortcut icon" href="/data/logo.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90396229-1"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'UA-90396229-1'); </script>
+</head>
+
 <body style="margin:0; padding:0; overflow:hidden; background-color:#222222;">
     <canvas id="display"></canvas>
     <script src="https://cdn.jsdelivr.net/npm/pixi.js@7.2.4/dist/pixi.min.js"></script>
-
     <script>
-
         const equations = [
             '\\int_{a}^{b} f(x) dx = F(b) - F(a)', // Fundamental theorem of calculus
             '\\frac{d}{dx} (uv) = u\\frac{dv}{dx} + v\\frac{du}{dx}', // Product rule
@@ -78,9 +85,17 @@
             'S = -\\int dx^4 \\sqrt{-g} (R + 2\\Lambda)', // Action for general relativity
             '\\delta S = 0', // Principle of least action
         ];
-        
+
         const equationImages = [];
         const drops = [];
+        const darkModeColor = 0xeeeeee; // White for dark mode
+        const lightModeColor = 0x222222; // Black for light mode
+
+        let isLightMode = false;
+        let isSlowMode = false;
+        let isMouseMode = false;
+        let mouseX = 0;
+        let mouseY = 0;
 
         const app = new PIXI.Application({
             view: document.getElementById('display'),
@@ -100,6 +115,7 @@
                 this.sprite.y = y;
                 this.sprite.scale.set(0.5);
                 this.speed = speed;
+                this.originalSpeed = speed;
                 this.sprite.alpha = 0;
                 this.sprite.anchor.set(0.5);
                 app.stage.addChild(this.sprite);
@@ -117,8 +133,16 @@
             }
 
             fall() {
-                this.sprite.y += this.speed;
-                this.sprite.alpha += this.speed/500;
+                let distanceFromMouse = Math.hypot(this.sprite.x - mouseX, this.sprite.y - mouseY);
+                let speedMultiplier = 1;
+                if (isMouseMode) {
+                    speedMultiplier = Math.max(0.1, distanceFromMouse / 500); // Change 500 to adjust sensitivity
+                }
+
+                let speed = (isSlowMode ? this.originalSpeed * 0.3 : this.originalSpeed) * speedMultiplier;
+
+                this.sprite.y += speed;
+                this.sprite.alpha += speed / 500;
                 if (this.sprite.y > window.innerHeight + this.sprite.height) {
                     this.sprite.y = 0;
                     this.sprite.x = Math.random() * window.innerWidth;
@@ -190,7 +214,7 @@
                         mj2img("\\[" + equation + "\\]", function (output) {
                             let texture = PIXI.Texture.from(output.img);
                             equationImages.push(texture);
-                            new Drop(Math.random() * window.innerWidth, Math.random() * window.innerHeight, Math.random()*4 + 3.0, texture);
+                            new Drop(Math.random() * window.innerWidth, Math.random() * window.innerHeight, Math.random() * 4 + 3.0, texture);
                             if (index === 0) {
                                 // Start the animation ticker as soon as the first equation is ready
                                 app.ticker.add((delta) => {
@@ -205,22 +229,37 @@
             }
         };
 
-        // setup() function 
-        function setup() {
-            app.ticker.add((delta) => {
-                for (let drop of drops) {
-                    drop.fall();
-                }
-            });
-            window.addEventListener('resize', () => {
-                app.renderer.resize(window.innerWidth, window.innerHeight);
-                for (let drop of drops) {
-                    drop.sprite.x = Math.random() * app.screen.width;
-                    drop.sprite.y = Math.random() * app.screen.height;
-                    drop.updateDimensions();
-                }
-            });
+        function updateSpritesColor(color) {
+            for (let drop of drops) {
+                drop.sprite.tint = color;
+            }
         }
+
+        window.addEventListener('mousemove', (event) => {
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+        });
+
+        window.addEventListener('keydown', (event) => {
+            switch (event.key) {
+                case 'x':
+                    isLightMode = !isLightMode; // Toggle light mode
+                    if (isLightMode) {
+                        app.renderer.backgroundColor = 0xFFFFFF; // Change background to white
+                        updateSpritesColor(lightModeColor); // Change sprites color to black
+                    } else {
+                        app.renderer.backgroundColor = 0x222222; // Change background to dark
+                        updateSpritesColor(darkModeColor); // Change sprites color to white
+                    }
+                    break;
+                case 's':
+                    isSlowMode = !isSlowMode; // Toggle slow mode
+                    break;
+                case 'm':
+                    isMouseMode = !isMouseMode; // Toggle slow mode
+                    break;
+            }
+        });
 
         // Remaining part of MathJax loading
         (function (d, script) {
