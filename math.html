@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <!-- keyboard controls: M = mouse mode, S = slow mode, X = light mode, P = play rain music (changes based on speed) -->
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -96,6 +97,8 @@
         let isMouseMode = false;
         let mouseX = 0;
         let mouseY = 0;
+        let lastTapTime = 0;
+        let tapTimeout;
 
         let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
         let rainSound, birdsSound;
@@ -341,6 +344,51 @@
                     break;
             }
         });
+
+        window.addEventListener('touchstart', function(event) {
+        let currentTime = Date.now();
+        let tapLength = currentTime - lastTapTime;
+        lastTapTime = currentTime;
+
+        // If the time between taps is less than 500ms, it's a double tap
+        if (tapLength < 500 && tapLength > 0) {
+            clearTimeout(tapTimeout); // Cancel the single tap timeout
+            // Toggle slow mode
+            isSlowMode = !isSlowMode;
+            if (rainSoundAndGain && isSlowMode) {
+                stopSound(rainSoundAndGain);
+                rainSoundAndGain = null;
+                birdsSoundAndGain = playSound(birdsSound);
+            } else if (birdsSoundAndGain) {
+                stopSound(birdsSoundAndGain);
+                birdsSoundAndGain = null;
+                rainSoundAndGain = playSound(rainSound);
+            }
+        } else {
+            // Set a timeout for the single tap logic
+            tapTimeout = setTimeout(function() {
+                // Toggle sound
+                if (isSlowMode) {
+                    if (birdsSoundAndGain) {
+                        stopSound(birdsSoundAndGain);
+                        birdsSoundAndGain = null;
+                    } else {
+                        birdsSoundAndGain = playSound(birdsSound);
+                    }
+                } else {
+                    if (rainSoundAndGain) {
+                        stopSound(rainSoundAndGain);
+                        rainSoundAndGain = null;
+                    } else {
+                        rainSoundAndGain = playSound(rainSound);
+                    }
+                }
+            }, 500); // Delay for the single tap
+        }
+
+        // Prevent default behavior to avoid double zoom on double tap
+        event.preventDefault();
+    }, false);
 
         // Remaining part of MathJax loading
         (function (d, script) {
