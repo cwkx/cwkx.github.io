@@ -6,6 +6,7 @@
     <script src="https://cdn.jsdelivr.net/npm/pixi.js@7.2.4/dist/pixi.min.js"></script>
 
     <script>
+
         const equations = [
             '\\int_{a}^{b} f(x) dx = F(b) - F(a)', // Fundamental theorem of calculus
             '\\frac{d}{dx} (uv) = u\\frac{dv}{dx} + v\\frac{du}{dx}', // Product rule
@@ -18,6 +19,30 @@
             '\\frac{d}{dx} x^n = n x^{n-1}', // Power rule for derivatives
             '\\nabla \\cdot (\\nabla \\times \\vec{A}) = 0', // Vector calculus identity
             '\\nabla \\times (\\nabla f) = 0', // Vector calculus identity
+            '{d\\tau} \\frac{dx^\\rho}{d\\tau} = 0', // Geodesic equation
+            'T^{\\mu\\nu} = (\\rho + P) u^\\mu u^\\nu + P g^{\\mu\\nu}', // Stress-energy tensor
+            '\\nabla_\\mu T^{\\mu\\nu} = 0', // Conservation of energy-momentum
+            'R_{\\mu\\nu} - \\frac{1}{2}g_{\\mu\\nu}R + \\Lambda g_{\\mu\\nu} = \\frac{8 \\pi G}{c^4} T_{\\mu\\nu}', // Einstein field equations
+            '\\nabla^2 \\phi = 4 \\pi G \\rho', // Poisson's equation for Newtonian gravity
+            '\\nabla^2 E = - \\frac{\\rho}{\\varepsilon_0}', // Poisson's equation for electrostatics
+            '\\nabla^2 \\vec{B} = \\mu_0 \\vec{J} + \\mu_0 \\varepsilon_0 \\frac{\\partial \\vec{E}}{\\partial t}', // Ampere's Law with Maxwell's addition
+            'E = mc^2', // Energy-mass equivalence
+            'F = G \\frac{m_1 m_2}{r^2}', // Newton's law of universal gravitation
+            'F = ma', // Newton's second law of motion
+            'E_k = \\frac{1}{2} mv^2', // Kinetic energy
+            'E_p = mgh', // Potential energy
+            'W = Fd', // Work done
+            '\\frac{df}{dx} = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}', // Definition of the derivative
+            '\\int_a^b f(x) dx = \\lim_{n \\to \\infty} \\sum_{i=1}^n f(x_i^*) \\Delta x', // Definition of the integral
+            '\\frac{d}{dx} \\int_a^x f(t) dt = f(x)', // Fundamental theorem of calculus
+            'i\\hbar \\frac{\\partial}{\\partial t} \\Psi = \\hat{H} \\Psi', // Time-dependent Schrödinger equation
+            '\\nabla^2 \\Psi + \\frac{2m}{\\hbar^2}(E - V)\\Psi = 0', // Time-independent Schrödinger equation
+            'H\\Psi = E\\Psi', // Eigenvalue equation for Hamiltonian operator
+            '\\hat{A} \\hat{B} - \\hat{B} \\hat{A} = i\\hbar [\\hat{A}, \\hat{B}]', // Commutation relation in quantum mechanics
+            '[x, p] = i\\hbar', // Canonical commutation relation
+            'x(t) = x_0 + v_0 t + \\frac{1}{2} a t^2', // Equation of motion with constant acceleration
+            'v(t) = v_0 + at', // Velocity as a function of time with constant acceleration
+            'x(t) = x_0 + v t', // Equation of motion with constant velocity
             '\\Delta f = \\nabla \\cdot \\nabla f', // Laplacian in Cartesian coordinates
             '\\frac{d^2y}{dx^2} + ky = 0', // Simple harmonic oscillator
             '\\frac{d^2y}{dx^2} - k^2y = 0', // Wave equation
@@ -26,56 +51,34 @@
             '\\int_{-\\infty}^\\infty e^{-x^2} dx = \\sqrt{\\pi}', // Gaussian integral
             '\\frac{dP(X)}{dx} = f_X(x)', // Probability density function
             'E[X] = \\int_{-\\infty}^{\\infty} x f_X(x) dx', // Expected value
-            'Var[X] = E[X^2] - (E[X])^2', // Variance
-            'Cov[X,Y] = E[XY] - E[X]E[Y]', // Covariance
             '\\nabla^2 \\Phi = 4\\pi G \\rho', // Poisson's equation for gravitational potential
             '\\frac{d^2 x}{dt^2} = -\\frac{k}{m}x', // Simple harmonic motion
             '\\frac{dN}{dt} = rN(1 - \\frac{N}{K})', // Logistic population growth
             'x\' = Ax + Bu', // State-space representation of a system
             '\\frac{\\partial y}{\\partial t} = D\\frac{\\partial^2 y}{\\partial x^2}', // Heat equation
-            '\\Delta S \\geq 0',
-            '\\frac{\\partial u}{\\partial t} = \\alpha \\nabla^2 u',
-            '\\nabla^2 u = 0',
-            '\\int_{-\\infty}^\\infty \\hat f(\\xi)\\,e^{2 \\pi i \\xi x} \\,d\\xi',
-            '\\Gamma(z) = \\int_0^\\infty t^{z-1}e^{-t} dt\\,.',
-            '\\zeta(s) = \\sum_{n=1}^\\infty \\frac{1}{n^s}',
-            '\\Phi(x,y) = \\int_\\Gamma \\frac{\\partial \\Phi}{\\partial n} ds',
-            '\\left(\\frac{\\partial u}{\\partial n}\\right)_\\Gamma = \\int_\\Gamma g ds',
-            '\\int_{a}^{b} f(x) dx = F(b) - F(a)', // Fundamental theorem of calculus
-            '\\frac{d}{dx} (uv) = u\\frac{dv}{dx} + v\\frac{du}{dx}', // Product rule
-            '\\frac{d}{dx} (\\frac{u}{v}) = \\frac{vu\' - uv\'}{v^2}', // Quotient rule
-            '\\int e^{ax} dx = \\frac{1}{a} e^{ax}', // Integral of exponential
-            '\\int a^x dx = \\frac{1}{\\ln a} a^x', // Integral of exponential with base a
-            'n! = n \\times (n-1) \\times \\cdots \\times 2 \\times 1', // Factorial
-            '\\binom{n}{k} = \\frac{n!}{k!(n-k)!}', // Binomial coefficient
-            '\\int x^n dx = \\frac{x^{n+1}}{n+1}', // Power rule for integrals
-            '\\frac{d}{dx} x^n = n x^{n-1}', // Power rule for derivatives
-            '\\nabla \\cdot (\\nabla \\times \\vec{A}) = 0', // Vector calculus identity
-            '\\nabla \\times (\\nabla f) = 0', // Vector calculus identity
-            '\\Delta f = \\nabla \\cdot \\nabla f', // Laplacian in Cartesian coordinates
-            '\\frac{d^2y}{dx^2} + ky = 0', // Simple harmonic oscillator
-            '\\frac{d^2y}{dx^2} - k^2y = 0', // Wave equation
-            '\\int_{-\\infty}^\\infty \\delta(x) dx = 1', // Property of Dirac delta function
-            '\\int_{-\\infty}^\\infty \\delta(x-a) f(x) dx = f(a)', // Property of Dirac delta function
-            '\\int_{-\\infty}^\\infty e^{-x^2} dx = \\sqrt{\\pi}', // Gaussian integral
-            '\\frac{dP(X)}{dx} = f_X(x)', // Probability density function
-            'E[X] = \\int_{-\\infty}^{\\infty} x f_X(x) dx', // Expected value
-            'Var[X] = E[X^2] - (E[X])^2', // Variance
-            'Cov[X,Y] = E[XY] - E[X]E[Y]', // Covariance
-            '\\nabla^2 \\Phi = 4\\pi G \\rho', // Poisson's equation for gravitational potential
-            '\\frac{d^2 x}{dt^2} = -\\frac{k}{m}x', // Simple harmonic motion
-            '\\frac{dN}{dt} = rN(1 - \\frac{N}{K})', // Logistic population growth
-            'x\' = Ax + Bu', // State-space representation of a system
-            '\\frac{\\partial y}{\\partial t} = D\\frac{\\partial^2 y}{\\partial x^2}', // Heat equation
-            '\\Delta S \\geq 0',
-            '\\frac{\\partial u}{\\partial t} = \\alpha \\nabla^2 u',
-            '\\nabla^2 u = 0',
-            '\\int_{-\\infty}^\\infty \\hat f(\\xi)\\,e^{2 \\pi i \\xi x} \\,d\\xi',
-            '\\Gamma(z) = \\int_0^\\infty t^{z-1}e^{-t} dt\\,.',
-            '\\zeta(s) = \\sum_{n=1}^\\infty \\frac{1}{n^s}',
-            '\\Phi(x,y) = \\int_\\Gamma \\frac{\\partial \\Phi}{\\partial n} ds',
-            '\\left(\\frac{\\partial u}{\\partial n}\\right)_\\Gamma = \\int_\\Gamma g ds',
+            '\\frac{\\partial \\rho}{\\partial t} + \\nabla \\cdot (\\rho \\vec{v}) = 0', // Continuity equation
+            '\\frac{\\partial \\vec{v}}{\\partial t} + (\\vec{v} \\cdot \\nabla) \\vec{v} = -\\frac{1}{\\rho} \\nabla p + \\nu \\nabla^2 \\vec{v}', // Navier-Stokes equation
+            '\\int_a^b f(x) dx = (b - a) \\int_0^1 f(a + (b - a)y) dy', // Change of variables in one-dimensional integrals
+            '\\int_D f(x, y) dx dy = \\int_D f(x(u, v), y(u, v)) |J(u, v)| du dv', // Change of variables in two-dimensional integrals, where J is the Jacobian determinant
+            'C(x, y) = \\inf_{\\gamma \\in \\Gamma(x, y)} \\int_{0}^{1} c(\\gamma(t), \\gamma\'(t)) dt', // Cost in optimal transport
+            'I(X; Y) = H(X) - H(X|Y)', // Mutual information
+            'H(X) = - \\sum p(x) \\log p(x)', // Entropy
+            '\\frac{\\partial f}{\\partial x} = \\frac{\\partial f}{\\partial y} \\frac{dy}{dx}', // Chain rule
+            'H(X|Y) = \\sum p(x, y) \\log \\frac{p(x)}{p(x|y)}', // Conditional entropy
+            '\\nabla \\cdot E = \\frac {\\rho} {\\varepsilon_0}', // Gauss's law
+            '\\nabla \\cdot B = 0', // Gauss's law for magnetism
+            '\\nabla \\times E = -\\frac{\\partial B}{\\partial t}', // Faraday's law
+            '\\nabla \\times B = \\mu_0(J + \\varepsilon_0 \\frac{\\partial E}{\\partial t})', // Ampere's law with Maxwell's addition
+            '\\frac{\\partial C}{\\partial t} = D \\nabla^2 C', // Diffusion equation
+            '\\frac{\\partial u}{\\partial t} = \\alpha \\nabla^2 u', // Heat equation
+            '\\nabla^2 u = 0', // Laplace's equation
+            '\\nabla^2 \\Phi = 4\\pi G \\rho', // Poisson's equation for gravity
+            'i\\hbar \\frac{d}{dt} \\Psi = \\hat{H} \\Psi', // Schrödinger equation
+            'g_{\\mu\\nu} = \\eta_{\\mu\\nu} + h_{\\mu\\nu}', // Perturbative gravity
+            'S = -\\int dx^4 \\sqrt{-g} (R + 2\\Lambda)', // Action for general relativity
+            '\\delta S = 0', // Principle of least action
         ];
+        
         const equationImages = [];
         const drops = [];
 
@@ -85,7 +88,9 @@
             height: window.innerHeight,
             resolution: window.devicePixelRatio,
             autoDensity: true,
-            backgroundColor: 0x222222
+            backgroundColor: 0x222222,
+            autoResize: true,
+            resizeTo: window
         });
 
         class Drop {
@@ -98,7 +103,7 @@
                 this.sprite.alpha = 0;
                 this.sprite.anchor.set(0.5);
                 app.stage.addChild(this.sprite);
-                drops.push(this); // Add this instance to the drops array
+                drops.push(this);
             }
 
             resize() {
@@ -106,13 +111,19 @@
                 this.sprite.y = Math.random() * app.screen.height;
             }
 
+            updateDimensions() {
+                this.sprite.width = window.innerWidth;
+                this.sprite.height = window.innerHeight;
+            }
+
             fall() {
                 this.sprite.y += this.speed;
-                this.sprite.alpha += 0.01;
+                this.sprite.alpha += this.speed/500;
                 if (this.sprite.y > window.innerHeight + this.sprite.height) {
                     this.sprite.y = 0;
                     this.sprite.x = Math.random() * window.innerWidth;
                     this.sprite.alpha = 0;
+                    this.speed = Math.random() * 4 + 3.0;
                 }
             }
         }
@@ -179,7 +190,7 @@
                         mj2img("\\[" + equation + "\\]", function (output) {
                             let texture = PIXI.Texture.from(output.img);
                             equationImages.push(texture);
-                            new Drop(Math.random() * window.innerWidth, Math.random() * window.innerHeight, (Math.random() + 0.5) * 5, texture);
+                            new Drop(Math.random() * window.innerWidth, Math.random() * window.innerHeight, Math.random()*4 + 3.0, texture);
                             if (index === 0) {
                                 // Start the animation ticker as soon as the first equation is ready
                                 app.ticker.add((delta) => {
@@ -204,7 +215,9 @@
             window.addEventListener('resize', () => {
                 app.renderer.resize(window.innerWidth, window.innerHeight);
                 for (let drop of drops) {
-                    drop.resize();
+                    drop.sprite.x = Math.random() * app.screen.width;
+                    drop.sprite.y = Math.random() * app.screen.height;
+                    drop.updateDimensions();
                 }
             });
         }
