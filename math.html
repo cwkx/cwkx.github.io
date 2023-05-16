@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+<!-- keyboard controls: M = mouse mode, S = slow mode, X = light mode -->
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -88,8 +88,8 @@
 
         const equationImages = [];
         const drops = [];
-        const darkModeColor = 0xeeeeee; // White for dark mode
-        const lightModeColor = 0x222222; // Black for light mode
+        const darkModeColor = 0xD3D3D3;
+        const lightModeColor = 0x333333;
 
         let isLightMode = false;
         let isSlowMode = false;
@@ -245,10 +245,10 @@
                 case 'x':
                     isLightMode = !isLightMode; // Toggle light mode
                     if (isLightMode) {
-                        app.renderer.backgroundColor = 0xFFFFFF; // Change background to white
+                        app.renderer.background.color = 0xFFFFFF; // Change background to white
                         updateSpritesColor(lightModeColor); // Change sprites color to black
                     } else {
-                        app.renderer.backgroundColor = 0x222222; // Change background to dark
+                        app.renderer.background.color = 0x222222; // Change background to dark
                         updateSpritesColor(darkModeColor); // Change sprites color to white
                     }
                     break;
