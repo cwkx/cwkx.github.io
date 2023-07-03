@@ -9,9 +9,9 @@
 
 Add all ingredients, at medium high heat bring to a full boil, then set aside to cool completely.
 
-- 1 tablespoon rose water
-
 When completely cooled, remove the black peppercorns and add rose water syrup and stir.
+
+- 1 tablespoon rose water
 
 ## Nut filling
 - a £5 bag of shelled pistachios from Tesco baking section
@@ -27,6 +27,7 @@ SET ASIDE 1 tablespoon for the garnish. Then mix in remainder of ingredients.
 - 400g (1 3/4 blocks) of butter
 
 Get big baking tray, add a baking sheet if its dirty. Melt butter in bow, brush on baking sheet.
+Keep butter warm (re-microwave) so its thin and easy to spread.
 
 Layer and butter 7 sheets
 Add 1/3 nut mixture
@@ -39,6 +40,6 @@ Add final 7, don't butter the last.
 Cut the last.
 Now add 4 tablespoons worth of butter.
 
-Bake fan 180 for 25mins, turn and bake for 20mins more.
+Bake fan 180 for 25mins, turn and bake for 15mins more.
 Immediately poor cold syrup on, then garnish.
 Cool 3 hours, cover in foil and cool for another 8 hours.
