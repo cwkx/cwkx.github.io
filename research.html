@@ -29,6 +29,7 @@
 <div id="nav">
   <ul>
     <li><a href="#"><b>research</b></a></li>
+  <li><a href="#unleashing-transformers">unleashing transformers</a></li>
   <li><a href="#dlproteins">deep learning proteins</a></li>
   <li><a href="#gons">gradient origin networks</a></li>
   <li><a href="#multiscale">multiscale 3d macular segmentation</a></li>
@@ -42,7 +43,61 @@
 <h1>Research News</h1>
 <p>This sections contains quick summaries about selected research articles.</p>
 <hr>
-<h1 id="dlproteins">Deep Learning Protein Conformational Space with Convolutions and Latent Interpolations</h1>
+<h1 id="unleashing-transformers">Unleashing transformers: parallel token prediction with discrete absorbing diffusion for fast high-resolution image generation from vector-quantized codes</h1>
+<div class="icons">
+    <a href="https://arxiv.org/abs/2111.12701"><span> arXiv</span></a>
+    <a href="https://github.com/samb-t/unleashing-transformers"><span> github code</span></a>
+</div>
+
+<div class="content">
+  <h2 id="summary">Summary</h2>
+  <p>
+  Accepted at ECCV. We propose a novel parallel token prediction approach for generating VQ image representations that allows for significantly faster sampling than autoregressive approaches. Our approach achieves state-of-the-art results and can generate high-resolution images surpassing the original training data's resolution.
+  </p>
+  <center>
+    <img width="100%" src="/data/articles/research-news/unleashing-transformers/unleashing-transformers-samples.jpg" alt="Examples of unconditional samples from our models">
+  </center>
+  
+  <h2 id="approach">Approach</h2>
+  <p>
+  We utilize a Vector-Quantized (VQ) image model to compress images into a discrete latent space. An absorbing diffusion model then learns the latent distribution, allowing us to generate high-resolution images rapidly, without the need for time-consuming autoregressive methods.
+  </p>
+  <center>
+    <img width="100%" src="/data/articles/research-news/unleashing-transformers/unleashing-transformers-diagram.jpg" alt="Our approach diagram">
+  </center>
+  
+  <h2 id="evaluation">Evaluation</h2>
+  <p>
+  Our method has been rigorously evaluated on multiple high-resolution datasets, including LSUN Churches, LSUN Bedroom, and FFHQ. Despite its efficiency and reduced parameter count, our approach achieves comparable or better results against other VQ image models.
+  </p>
+  <center>
+    <img width="100%" src="/data/articles/research-news/unleashing-transformers/unleashing-transformers-tables.png" alt="Quantitative evaluation table">
+  </center>
+  <p>
+    We also support outpainting (synthesise image regions outsdie the training data), inpainting, and control over the sample diversity.
+    </p>
+  <center>
+    <img width="100%" src="/data/articles/research-news/unleashing-transformers/unleashing-transformers-big-churches.jpg" alt="High resolution samples">
+    <img width="50%" src="/data/articles/research-news/unleashing-transformers/temperature_figure.jpg" alt="We offer control over sample diversity.">
+  </center>
+
+    <h2 id="citation">Citation</h2>
+    <p>Please cite the article with:</p>
+    <code>
+      <pre>
+@inproceedings{bond2022unleashing,
+  title={Unleashing Transformers: Parallel token prediction with discrete absorbing diffusion for fast high-resolution image generation from vector-quantized codes},
+  author={Bond-Taylor, Sam and Hessey, Peter and Sasaki, Hiroshi and Breckon, Toby P and Willcocks, Chris G},
+  booktitle={European Conference on Computer Vision},
+  pages={170--188},
+  year={2022},
+  organization={Springer}
+}
+      </pre>
+    </code>
+    <hr>
+</div>
+<h1 id="dlproteins">Deep learning protein conformational space with convolutions and latent interpolations</h1>
 <p>
   <a href="https://journals.aps.org/prx/abstract/10.1103/PhysRevX.11.011052">This work has been accepted at Physical Review X, 2021</a>. We present a convolutional neural network that learns a continuous conformational space representation from example structures, and loss functions that ensure intermediates between examples are physically plausible. We show that this network, trained with simulations of distinct protein states, can correctly predict a biologically relevant transition path, without any example on the path provided.
 </p>
@@ -76,7 +131,7 @@ Current experimental techniques provide a good picture of the most stable confor
   </pre>
 </code>
 <hr>
-<h1 id="gons">Gradient Origin Networks</h1>
+<h1 id="gons">Gradient origin networks</h1>
 <p>
   This work has been accepted at ICLR 2021. <a href="/data/GON/">Gradient Origin Networks (GONs)</a> are comparable to Variational Autoencoders in that both compress data into latent representations and permit sampling in a single step. However, GONs use gradients as encodings meaning that they have a simpler architecture with only a decoder network:
 </p>
@@ -141,7 +196,7 @@ Current experimental techniques provide a good picture of the most stable confor
   </pre>
 </code>
 <hr>
-<h1 id="multiscale">Multi-Scale Segmentation and Surface Fitting for Measuring 3D Macular Holes</h1>
+<h1 id="multiscale">Multi-scale segmentation and surface fitting for measuring 3D macular holes</h1>
 <p><em>Selected photos from the paper below:</em></p>
 <p>
 <img class="paper-thumb-7" src="/data/articles/multiscale-3d-macular/paper-1.png">
@@ -188,7 +243,7 @@ The method automatically outputs several metrics and measurements using novel me
 </p>
 
 <hr>
-<h1 id="extract3d">Extracting 3D Parametric Curves from 2D Images of Helical Objects</h1>
+<h1 id="extract3d">Extracting 3D parametric curves from 2D images of helical objects</h1>
 <p><strong>Chris Willcocks</strong>, Philip Jackson, Carl Nelson, and Boguslaw Obara</p>
 <p><img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-0.png">
 <img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-1.png">
@@ -309,7 +364,7 @@ peaks       = floor(length(p)/2);
 </code>
 </p>
 <hr>
-<h1 id="svd">Sparse Volumetric Deformation</h1>
+<h1 id="svd">Sparse volumetric deformation</h1>
 <p><em>Selected photos from 2013 thesis below:</em></p>
 <p><img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-1.png">
 <img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-14.png">
@@ -347,7 +402,7 @@ peaks       = floor(length(p)/2);
 </code>
 </p>
 <hr>
-<h1 id="fvs">Feature-Varying Skeletonization</h1>
+<h1 id="fvs">Feature-varying skeletonization</h1>
 <h3>Intuitive control over the target feature size and output skeleton topology</h3>
 <p><img class="paper-thumb-5" src="/data/articles/feature-varying-skeletonization/paper-0.png">
 <img class="paper-thumb-5" src="/data/articles/feature-varying-skeletonization/paper-1.png">
