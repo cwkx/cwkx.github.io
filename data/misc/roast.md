@@ -8,6 +8,7 @@
 
 roast potatoes
 - parboil small cut potatoes in pan with lid with 1/4 tsp of baking soda (water boiling first)
+   - do NOT parboil too long, if too long when shaking them they will turn to mashed potato and taste of dishwater, better to over-roast
 - put baking tray in oven for potatoes and add butter/fat to tray
   - don't add foil to this fat tray, as the potatoes will stick to it
 - transfer potatoes to dish after 20mins (!) should be soft
