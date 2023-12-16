@@ -2,4 +2,4 @@
 - rince brussels in bag, then cut off dirty ends, remove any oter dirty brussel shells, and halve them.
 - 30mins before roast, transfer halved brussels to roasting tin (can also add broccoli), pour lots of oil in and pepper (no salt) and mix with hands to coat brussels with the oil
 - roast until crispy, don't worry about flipping too often as you'll get nice char against tin
-- transfer to serving dish, add bacon, add some more maple to sweeten, toss, cover in tin foil (put back in oven if you need rest of roast to finish)
+- transfer to serving dish, add bacon, fresh cranberries if you have them,  add some more maple to sweeten by taste, toss, cover in tin foil (put back in oven if you need rest of roast to finish)
