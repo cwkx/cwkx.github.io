@@ -20,7 +20,7 @@ roast potatoes
 - don't add foil to this fat tray, as the potatoes will stick to it
 - turn potatoes every 20-30mins (3 turns at 20mins is best or 2 turns at 200C if lazy), don't let them burn
 - add saussages to chicken disk at this time
-- the trick to glass-like crispy potatoes with fluffy interiors is moisture/steam management; large potatoes will over steam from the inside unless roasted very long on lower temperatures. Regular turning in the fat allows the outside to be higher temperature and brown evenly. Roasting too long will dry out the entire potato giving no fluffy interior. A large roast meat (2kg chicken) benefits from (ever so slightly) larger potatoes cooked slower and longer.
+- the trick to glass-like crispy potatoes with fluffy interiors is moisture/steam management: (1) not overcrowing potatoes in the trays by having too many potatoes, they will not crisp up evenly if crowded, (2) large potatoes will over steam from the inside unless roasted very long on lower temperatures, (3) regular turning in the fat allows the outside to be higher temperature and brown evenly, (4) 220C will brown the edges more less evenly, but cooks faster, 200C will brown more evenly but takes longer. Roasting too long will dry out the entire potato giving no fluffy interior. A large roast meat (2kg chicken) benefits from (ever so slightly) larger potatoes cooked slower and longer.
 
 sweede
 - cut into small chunks
