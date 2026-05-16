@@ -33,8 +33,10 @@ gravy
 - do not add more gravy granules to a rolling boil, they will separate and ruin it (would need to sift to save)
 
 peas
-- microwave frozen peas with butter until very soft 3mins+
+- run frozen peas under cold water if from freezer
+- microwave with butter until very soft 3mins+
 - mush with more butter and mint from garden, creme fraiche if you have at hand, and season
+- alternatively, purée (blend) the peas and mint with chicken stock, then add original peas to the "pea soup"
 
 glazes/elevations
 - maple syrup or honey glaze the parsnips and carrots in the final 15mins (same time as taking meat out to rest)
