@@ -5,6 +5,7 @@ large chicken/beef
    - beef = 52C
    - temps will rise a bit more after resting (to medium rare 55C)
  - lots of salt and a bit of pepper in cavity
+   - salt 30mins before is better than just before
  - rub butter all over chicken and vegetables, season again
  - parsnips and sweet potato taste great if cooked for full chicken time
  - chicken produces lots of juice, which ruins sweet potatoes and potatoes, but is good for courgettes final 30mins
@@ -24,8 +25,8 @@ roast potatoes
 
 sweede
 - cut into small chunks
-- boil for ages (30mins) until soft, depends how ripe the sweede is
-- mash with lots of butter, paprikam, salt and pepper
+- boil for ages (sometimes 30mins+) until soft, depends how ripe the sweede is
+- mash with lots of butter, paprika, (+ fresh ground nutmeg) salt and pepper
 
 gravy
 - collect juice from meat, large amount of gravy granules, add water off the boil, bring back to rolling boil and stir until thick
@@ -33,6 +34,10 @@ gravy
 
 peas
 - microwave frozen peas with butter until very soft 3mins+
-- mush with more butter and mint from garden, and season
+- mush with more butter and mint from garden, creme fraiche if you have at hand, and season
+
+glazes/elevations
+- maple syrup or honey glaze the parsnips and carrots in the final 15mins (same time as taking meat out to rest)
+- if doing beef, splash of red wine and redcurrent jelly in the gravy, perhaps a very tiny bit of mustard
 
 serve with yorkshires, saussage stuffing, apple mint jelly, cranberry sauce, roasted brussels with bacon, cranberries and maple syrup
