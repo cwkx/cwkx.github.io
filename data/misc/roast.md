@@ -1,9 +1,10 @@
-large chicken/beef
+large chicken/beef/lamb
 ~1hr 20mins
  - always use meat thermometer and rest meats with tin foil for 20mins
    - chicken internal temp = 74C
    - beef = 52C
-   - temps will rise a bit more after resting (to medium rare 55C)
+   - lamb = 57C
+   - temps will rise a bit more after resting (to medium rare, e.g. beef 55C)
  - lots of salt and a bit of pepper in cavity
    - salt 30mins before is better than just before
  - rub butter all over chicken and vegetables, season again
@@ -31,6 +32,8 @@ sweede
 gravy
 - collect juice from meat, large amount of gravy granules, add water off the boil, bring back to rolling boil and stir until thick
 - do not add more gravy granules to a rolling boil, they will separate and ruin it (would need to sift to save)
+- if doing beef, splash of red wine and redcurrent jelly in the gravy, perhaps a very tiny bit of mustard
+- lamb juices make best gravies, proper stock is best
 
 peas
 - run frozen peas under cold water if from freezer
@@ -40,6 +43,5 @@ peas
 
 glazes/elevations
 - maple syrup or honey glaze the parsnips and carrots in the final 15mins (same time as taking meat out to rest)
-- if doing beef, splash of red wine and redcurrent jelly in the gravy, perhaps a very tiny bit of mustard
 
 serve with yorkshires, saussage stuffing, apple mint jelly, cranberry sauce, roasted brussels (cut in half) with bacon, cranberries and maple syrup
