@@ -44,4 +44,4 @@ peas
 glazes/elevations
 - maple syrup or honey glaze the parsnips and carrots in the final 15mins (same time as taking meat out to rest)
 
-serve with yorkshires, saussage stuffing, apple mint jelly, cranberry sauce, roasted brussels (cut in half) with bacon, cranberries and maple syrup
+serve with yorkshires, saussage stuffing, apple mint jelly, cranberry sauce, roasted brussels (cut in half) with bacon, cranberries and maple syrup (https://github.com/cwkx/cwkx.github.io/blob/master/data/misc/brussels.md)
