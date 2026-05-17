@@ -8,7 +8,7 @@ large chicken/beef
    - salt 30mins before is better than just before
  - rub butter all over chicken and vegetables, season again
  - parsnips and sweet potato taste great if cooked for full chicken time
- - chicken produces lots of juice, which ruins sweet potatoes and potatoes, but is good for courgettes final 30mins
+ - chicken produces lots of juice, which ruins sweet potatoes and potatoes, but is good for wet vegetables final 30mins
 
 roast potatoes
 - parboil small cut potatoes in pan with lid with 1/4 tsp of baking soda (water boiling first)
