@@ -8,19 +8,19 @@ large chicken/beef
    - salt 30mins before is better than just before
  - rub butter all over chicken and vegetables, season again
  - parsnips and sweet potato taste great if cooked for full chicken time
- - chicken produces lots of juice, which ruins sweet potatoes and potatoes, but is good for wet vegetables final 30mins
+ - chicken produces lots of juice, which ruins sweet potatoes, parsnips, and potatoes, but is good for wet veg final 30mins
 
-roast potatoes
-- parboil small cut potatoes in pan with lid with 1/4 tsp of baking soda (water boiling first)
-   - do NOT parboil too long - about 13mins - if too long when shaking them they will turn to mashed potato and taste of dishwater, better to over-roast
-   - the trick is that the edges should be soft with fork, but insides still slightly firm
+roast potatoes and parsnips
+- parboil small cut potatoes (maris pipers) in pan with lid with 1/4 tsp of baking soda (water boiling first)
+   - many chefs say parboil until falling apart (aka Fallow/tripple cooked chip). I think its more nuanced; do NOT parboil too long - about 13mins - if too long when shaking them they will turn to mashed potato and taste of dishwater, better to over-roast and see tricks here. This means you can do parsnips at the same time too = easier, more time to enjoy wine.
+   - the edges should be soft with fork, but insides still slightly firm
    - after draining the water, you can take your time - let the steam release, potatoes will firm up, cracks open up allowing fat to penetrate and create crispy outside
    - while boiling potatoes, preheat oven trays to 220C (depends on whether you have separate oven for meat or not, meat wants 200C, potatoes want 220C)
-- ideally you should preheat the oils, but if lazy and dont want spitting oil to clean, just shake the potatoes onto the dry trays then cover them in oil or duck fat, then use 2 forks to quickly turn them in the fats - the very hot trays should quickly heat the fat
+- ideally you should preheat the oils, but if lazy and dont want spitting oil to clean, just shake the potatoes onto the dry hot trays then cover them in oil or duck fat, then use 2 forks to quickly turn them in the fats - the very hot trays should quickly heat the fat
 - add rosemary to the fat to season it
 - don't add foil to this fat tray, as the potatoes will stick to it
 - turn potatoes every 20-30mins (3 turns at 20mins is best or 2 turns at 200C if lazy), don't let them burn
-- add saussages to chicken disk at this time
+- add saussages to chicken dish at this time
 - the trick to glass-like crispy potatoes with fluffy interiors is moisture/steam management: (1) not overcrowing potatoes in the trays by having too many potatoes, they will not crisp up evenly if crowded, (2) large potatoes will over steam from the inside unless roasted very long on lower temperatures, (3) regular turning in the fat allows the outside to be higher temperature and brown evenly, (4) 220C will brown the edges more less evenly, but cooks faster, 200C will brown more evenly but takes longer. Roasting too long will dry out the entire potato giving no fluffy interior. A large roast meat (2kg chicken) benefits from (ever so slightly) larger potatoes cooked slower and longer.
 
 sweede
@@ -42,4 +42,4 @@ glazes/elevations
 - maple syrup or honey glaze the parsnips and carrots in the final 15mins (same time as taking meat out to rest)
 - if doing beef, splash of red wine and redcurrent jelly in the gravy, perhaps a very tiny bit of mustard
 
-serve with yorkshires, saussage stuffing, apple mint jelly, cranberry sauce, roasted brussels with bacon, cranberries and maple syrup
+serve with yorkshires, saussage stuffing, apple mint jelly, cranberry sauce, roasted brussels (cut in half) with bacon, cranberries and maple syrup
