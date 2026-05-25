@@ -25,6 +25,12 @@ roast potatoes and parsnips
 - another common mistake is too much fat in the trays, you don't want to boil them in fat; a very shallow layer of fat on the tray will get hotter = more crispy exterior
 - the trick to glass-like crispy potatoes with fluffy interiors is moisture/steam management: (1) not overcrowing potatoes in the trays by having too many potatoes, they will not crisp up evenly if crowded, (2) large potatoes will over steam from the inside unless roasted very long on lower temperatures, (3) regular turning in the fat allows the outside to be higher temperature and brown evenly, (4) 220C will brown the edges more less evenly, but cooks faster, 200C will brown more evenly but takes longer. Roasting too long will dry out the entire potato giving no fluffy interior. A large roast meat (2kg chicken) benefits from (ever so slightly) larger potatoes cooked slower and longer.
 
+stuffing
+- premade stuffing mix is awful by itself; a good saussage, cranberry and bacon stuffing massively elevates a roast
+- crisp up bacon in a pan, add some maple syrup, set aside
+- mix 1 egg, a full packet of saussage meat, a full package of stuffing mix, about 120g of cranberry sauce, and 350ml boiling water (50ml less than the stuffing mix)
+- cook for 50mins with roast (should also be plenty to stuff the bird cavity if doing chicken)
+
 sweede
 - cut into small chunks
 - boil for ages (sometimes 30mins+) until soft, depends how ripe the sweede is
@@ -60,6 +66,7 @@ timing
   - very large meats go in before the parboil and rest longer, e.g. if lots of guests
   - small meats can go in at the same time as the potatoes
 - salt meat
+- prep stuffing
 - full kettle on the boil, peel potatoes and parsnips first (kids help)
 - potatoes/parsnips go submerged into water, remove as much starch as possible (makes more crispy later)
 - put both potatoes & parsnips into big pan(s), boiling  water in, start the parboil
