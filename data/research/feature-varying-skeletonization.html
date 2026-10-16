@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Feature-varying skeletonization — Chris G. Willcocks</title>
+    <link rel="stylesheet" type="text/css" href="/data/style.css"/>
+    <link rel="shortcut icon" href="/data/logo.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90396229-1"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-90396229-1'); </script>
+  <style>pre { white-space: pre-wrap; overflow-wrap: anywhere; }</style>
+</head>
+<a id="top"></a>
+<div id="header">
+  <img id="headerLogo" src="/data/logo.svg" alt=""/>&nbsp;
+  <span id="headerLink">cwkx.com</span>
+  <span id="headerSubtitle">Research</span>
+</div>
+<hr class="hidden"/>
+<div id="menu">
+  <a href="/index.html">Home</a>
+  <a href="/blog.html"><b>Blog</b></a>
+  <a href="/publications.html">Publications</a>
+  <a href="/people.html">People</a>
+  <a href="/opportunities.html">Join as PhD/Postdoc</a>
+</div>
+<hr class="hidden"/>
+<div id="content">
+<div id="nav" role="navigation" aria-label="Post navigation">
+  <ul>
+    <li><a href="/blog.html#fvs"><img src="/data/up-level.svg" width="16" height="16" alt="" style="vertical-align: -2px;"> back to blog</a></li>
+    <li><a href="/blog.html#research-posts">research</a>
+      <ul>
+        <li><a href="#fvs" aria-current="page"><b>skeletonization</b></a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<hr class="hidden"/>
+<div id="main">
+<p><a href="/blog.html#fvs">[back to blog]</a></p>
+<h1 id="fvs">Feature-varying skeletonization</h1>
+<h3>Intuitive control over the target feature size and output skeleton topology</h3>
+<p><img class="paper-thumb-5" src="/data/articles/feature-varying-skeletonization/paper-0.png">
+<img class="paper-thumb-5" src="/data/articles/feature-varying-skeletonization/paper-1.png">
+<img class="paper-thumb-5" src="/data/articles/feature-varying-skeletonization/paper-2.png">
+<img class="paper-thumb-5" src="/data/articles/feature-varying-skeletonization/paper-3.png">
+<img class="paper-thumb-5" src="/data/articles/feature-varying-skeletonization/paper-4.png">
+<img class="paper-thumb-5" src="/data/articles/feature-varying-skeletonization/paper-5.png">
+<img class="paper-thumb-5" src="/data/articles/feature-varying-skeletonization/paper-6.png">
+<img class="paper-thumb-5" src="/data/articles/feature-varying-skeletonization/paper-7.png">
+<img class="paper-thumb-5" src="/data/articles/feature-varying-skeletonization/paper-8.png">
+<img class="paper-thumb-5" src="/data/articles/feature-varying-skeletonization/paper-9.png"></p>
+<p><a href="https://doi.org/10.1007/s00371-012-0688-x">Click to <strong>go to full publication on Springer Link</strong>.</a></p>
+<h3 id="abstract">Abstract</h3>
+<p>Current skeletonization algorithms strive to produce a single centered result which is homotopic and insensitive to surface noise. However, this traditional approach may not well capture the main parts of complex models, and may even produce poor results for applications such as animation. Instead, we approximate model topology through a target feature size ω, where undesired features smaller than ω are smoothed, and features larger than ω are retained into groups called bones. This relaxed feature-varying strategy allows applications to generate robust and meaningful results without requiring additional parameter tuning, even for damaged, noisy, complex, or high genus models.</p>
+<h3 id="overview">Overview</h3>
+<p>Given an input dense 3D mesh, it presents an intuitive algorithm to iteratively contract the mesh into a skeleton.</p>
+<p><img class="skel-thumb-5" src="/data/articles/feature-varying-skeletonization/0.png">
+<img class="skel-thumb-5" src="/data/articles/feature-varying-skeletonization/1.png">
+<img class="skel-thumb-5" src="/data/articles/feature-varying-skeletonization/2.png">
+<img class="skel-thumb-5" src="/data/articles/feature-varying-skeletonization/3.png">
+<img class="skel-thumb-5" src="/data/articles/feature-varying-skeletonization/4.png">
+<img class="skel-thumb-5" src="/data/articles/feature-varying-skeletonization/5.png"></p>
+<p>Simply, you have two forces:</p>
+<ol>
+<li><p>You iteratively smooth the mesh, by moving the vertices to their average location in their original one-ring neighbourhood.</p>
+</li>
+<li><p>You iteratively merge the mesh, by moving the vertices to the average position of any nearby vertices within some fixed Euclidean distance &omega;.</p>
+<ul>
+<li><em>For very simple implementations, you can store vertex id&#39;s in a grid and fetch nearby grid cells; it works more-or-less the same.</em></li>
+</ul>
+</li>
+</ol>
+<p>The final force that contracts the mesh is a simple linear interpolation between 1. and 2. governed by the one-ring neighbourhood surface area.</p>
+<p>While there are now better ways to generate curve skeletons, the nice little contribution with this at the time was its simplicity, and that it can make skeletons that are useful for animation with just a single parameter to adjust.</p>
+<div class="note info">
+  <h3>Key Advantages:</h3>
+  <p>
+   • Simplicity<br>
+   • Speed<br>
+   • Low parameters<br>
+  </p>
+</div>
+<p>It would be nice if this approach could be extended to the imaging domain; I briefly tried expressing similar concepts to the <em>merging</em> and <em>smoothing</em> with convolutions and got some interesting results, but I was unable to stop the skeleton overcontracting. The reason it stops overcontracting in the mesh geometry is because of perhaps an unexpected artifact whereby the vertices get pulled into groups &gt; &omega;. This is also a limitation of the method, in that the vertices can contract in an unpredictable way impacting the skeleton quality. I haven&#39;t thought much about extending this.</p>
+<h3 id="citation">Citation</h3>
+<p>Please cite the paper:
+<code>
+<pre>
+@article{willcocks-2012-feature-varying-skeletonization,
+   author    = {Chris G. Willcocks and Frederick W. B. Li},
+   title     = {Feature-varying skeletonization - Intuitive control over the target feature size and output skeleton topology},
+   journal   = {The Visual Computer},
+   volume    = {28},
+   number    = {6-8},
+   pages     = {775--785},
+   year      = {2012},
+   url       = {<a href="http://dx.doi.org/10.1007/s00371-012-0688-x">http://dx.doi.org/10.1007/s00371-012-0688-x</a>},
+   doi       = {10.1007/s00371-012-0688-x}
+}
+</pre>
+</code>
+</p>
+
+<a href="#top">[return to top]</a>
+</div>
+</div>
+</html>

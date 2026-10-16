@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Reinforcement learning teaching — Chris G. Willcocks</title>
+    <link rel="stylesheet" type="text/css" href="/data/style.css"/>
+    <link rel="shortcut icon" href="/data/logo.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90396229-1"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-90396229-1'); </script>
+  <script defer src="/data/teaching/showcase.js"></script>
+  <style>
+    .replay { display: block; width: 100%; max-width: 360px; border: 0; }
+    .demo-switch a[aria-current="true"] { font-weight: bold; }
+    .teaching-figure, .post-figure, audio, video { max-width: 100%; }
+    .teaching-figure, .post-figure { height: auto; }
+    .video-comparison { display: flex; flex-wrap: wrap; gap: 1em; }
+    .video-comparison figure { flex: 1 1 220px; max-width: 320px; margin: 0; }
+    .video-comparison video { display: block; width: 100%; height: auto; }
+    .curve-figure { max-width: 100%; width: auto; height: 220px; object-fit: contain; vertical-align: middle; }
+    .audio-comparison { display: flex; flex-wrap: wrap; column-gap: 1em; }
+    .audio-comparison p { max-width: 100%; margin: 0 0 1em; }
+    #gpt-sample { white-space: pre-wrap; overflow-wrap: anywhere; }
+  </style>
+</head>
+<a id="top"></a>
+<div id="header">
+  <img id="headerLogo" src="/data/logo.svg" alt=""/>&nbsp;
+  <span id="headerLink">cwkx.com</span>
+  <span id="headerSubtitle">Research</span>
+</div>
+<hr class="hidden"/>
+<div id="menu">
+  <a href="/index.html">Home</a>
+  <a href="/blog.html"><b>Blog</b></a>
+  <a href="/publications.html">Publications</a>
+  <a href="/people.html">People</a>
+  <a href="/opportunities.html">Join as PhD/Postdoc</a>
+</div>
+<hr class="hidden"/>
+<div id="content">
+<div id="nav" role="navigation" aria-label="Post navigation">
+  <ul>
+    <li><a href="/blog.html#rl"><img src="/data/up-level.svg" width="16" height="16" alt="" style="vertical-align: -2px;"> back to blog</a></li>
+    <li><a href="/blog.html#teaching-posts">teaching</a>
+      <ul>
+        <li><a href="#rl" aria-current="page"><b>reinforcement learning</b></a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<hr class="hidden"/>
+<div id="main">
+<p><a href="/blog.html#rl">[back to blog]</a></p>
+<article aria-labelledby="rl">
+<h1 id="rl">Reinforcement learning teaching</h1>
+<p>Each environment is a standalone <code>.py</code> file using PyTorch and the standard library. No Gymnasium: students can read and change the physics, observations, actions and rewards in one place.</p>
+<div id="teaching-demos">
+  <section id="bandits">
+    <h3>Bandits</h3>
+    <p>Inspect estimates and true rewards.</p>
+    <iframe class="replay" loading="lazy" src="/data/teaching/showcase/bandits.html" title="Bandit learning with reward estimates and true means" height="310"></iframe>
+    <p>Compare the estimates with each arm’s true reward. (<a href="/data/teaching/showcase/bandits.html">larger view</a>)</p>
+  </section>
+  <section id="locomotion">
+    <h3>Cat, dog and humanoid</h3>
+    <p class="demo-switch" aria-label="Choose a walker" data-frame="walker-replay" data-caption="walker-caption" data-full-view="walker-full"><a href="/data/teaching/showcase/cat-mixed.html" data-title="Cat on mixed terrain" data-caption="A learned cat gait over mixed terrain." aria-current="true" aria-controls="walker-replay">Cat</a> / <a href="/data/teaching/showcase/dog-mixed.html" data-title="Dog on mixed terrain" data-caption="A learned dog gait over mixed terrain." aria-controls="walker-replay">Dog</a> / <a href="/data/teaching/showcase/humanoid-mixed.html" data-title="Humanoid on mixed terrain" data-caption="A learned humanoid stride with opposing arm swing." aria-controls="walker-replay">Humanoid</a></p>
+    <iframe class="replay" id="walker-replay" src="/data/teaching/showcase/cat-mixed.html" title="Cat on mixed terrain" height="240"></iframe>
+    <p><span id="walker-caption" aria-live="polite">A learned cat gait over mixed terrain.</span> (<a id="walker-full" href="/data/teaching/showcase/cat-mixed.html">larger view</a>)</p>
+  </section>
+  <section id="racing">
+    <h3>Multi-agent racing</h3>
+    <p class="demo-switch" aria-label="Choose a racing objective" data-frame="racing-replay" data-caption="racing-caption" data-full-view="racing-full"><a href="/data/teaching/showcase/racing-cooperative.html" data-title="Cooperative multi-agent racing" data-caption="The team finishes when every racer completes the circuit." aria-current="true" aria-controls="racing-replay">Cooperative</a> / <a href="/data/teaching/showcase/racing-marl.html" data-title="Competitive multi-agent racing" data-caption="Different vehicle strengths; the first racer to finish wins." aria-controls="racing-replay">competitive</a></p>
+    <iframe class="replay" loading="lazy" id="racing-replay" src="/data/teaching/showcase/racing-cooperative.html" title="Cooperative multi-agent racing" height="270"></iframe>
+    <p><span id="racing-caption" aria-live="polite">The team finishes when every racer completes the circuit.</span> (<a id="racing-full" href="/data/teaching/showcase/racing-cooperative.html">larger view</a>)</p>
+  </section>
+</div>
+</article>
+
+<a href="#top">[return to top]</a>
+</div>
+</div>
+</html>

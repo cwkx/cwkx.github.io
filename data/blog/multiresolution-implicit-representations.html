@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Multiresolution implicit representations — Chris G. Willcocks</title>
+    <link rel="stylesheet" type="text/css" href="/data/style.css"/>
+    <link rel="shortcut icon" href="/data/logo.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90396229-1"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-90396229-1'); </script>
+  <script defer src="/data/teaching/showcase.js"></script>
+  <style>
+    .replay { display: block; width: 100%; max-width: 360px; border: 0; }
+    .demo-switch a[aria-current="true"] { font-weight: bold; }
+    .teaching-figure, .post-figure, audio, video { max-width: 100%; }
+    .teaching-figure, .post-figure { height: auto; }
+    .video-comparison { display: flex; flex-wrap: wrap; gap: 1em; }
+    .video-comparison figure { flex: 1 1 220px; max-width: 320px; margin: 0; }
+    .video-comparison video { display: block; width: 100%; height: auto; }
+    .curve-figure { max-width: 100%; width: auto; height: 220px; object-fit: contain; vertical-align: middle; }
+    .audio-comparison { display: flex; flex-wrap: wrap; column-gap: 1em; }
+    .audio-comparison p { max-width: 100%; margin: 0 0 1em; }
+    #gpt-sample { white-space: pre-wrap; overflow-wrap: anywhere; }
+  </style>
+</head>
+<a id="top"></a>
+<div id="header">
+  <img id="headerLogo" src="/data/logo.svg" alt=""/>&nbsp;
+  <span id="headerLink">cwkx.com</span>
+  <span id="headerSubtitle">Research</span>
+</div>
+<hr class="hidden"/>
+<div id="menu">
+  <a href="/index.html">Home</a>
+  <a href="/blog.html"><b>Blog</b></a>
+  <a href="/publications.html">Publications</a>
+  <a href="/people.html">People</a>
+  <a href="/opportunities.html">Join as PhD/Postdoc</a>
+</div>
+<hr class="hidden"/>
+<div id="content">
+<div id="nav" role="navigation" aria-label="Post navigation">
+  <ul>
+    <li><a href="/blog.html#implicit"><img src="/data/up-level.svg" width="16" height="16" alt="" style="vertical-align: -2px;"> back to blog</a></li>
+    <li><a href="/blog.html#teaching-posts">teaching</a>
+      <ul>
+        <li><a href="#implicit" aria-current="page"><b>implicit representations</b></a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<hr class="hidden"/>
+<div id="main">
+<p><a href="/blog.html#implicit">[back to blog]</a></p>
+<article aria-labelledby="implicit">
+<h1 id="implicit">Multiresolution implicit representations</h1>
+<p>A network can represent an image by mapping a position to a colour. Below, Sine–ReLU, SIREN and multiresolution hash grids each fit the same image using less than 1 MiB. The enlarged eye makes the effect of the representation easy to see.</p>
+<p><a href="/data/teaching/showcase/implicit-comparison.png"><img class="teaching-figure" src="/data/teaching/showcase/implicit-comparison.png" width="720" loading="lazy" alt="Original parrot image and Sine–ReLU, SIREN and hash-grid reconstructions, with enlarged eye regions."></a></p>
+<h3 id="cat-video">Cat video reconstruction</h3>
+<p>Original video alongside ReLU and multiresolution hash-grid reconstructions. Both fitted models use less than 1 MiB.</p>
+<div class="video-comparison">
+  <figure>
+    <figcaption>Original</figcaption>
+    <video id="cat-original" width="320" height="320" controls muted loop playsinline preload="metadata" poster="/data/teaching/showcase/cat-original.jpg" aria-label="Original cat video">
+      <source src="/data/teaching/showcase/cat-original.mp4" type="video/mp4">
+      <a href="/data/teaching/showcase/cat-original.mp4">Watch the original cat video.</a>
+    </video>
+  </figure>
+  <figure>
+    <figcaption>ReLU</figcaption>
+    <video id="cat-relu" width="320" height="320" controls muted loop playsinline preload="metadata" poster="/data/teaching/showcase/cat-relu.jpg" aria-label="ReLU cat video reconstruction">
+      <source src="/data/teaching/showcase/cat-relu.mp4" type="video/mp4">
+      <a href="/data/teaching/showcase/cat-relu.mp4">Watch the ReLU reconstruction.</a>
+    </video>
+  </figure>
+  <figure>
+    <figcaption>Hash grid</figcaption>
+    <video id="cat-hashgrid" width="320" height="320" controls muted loop playsinline preload="metadata" poster="/data/teaching/showcase/cat-hashgrid.jpg" aria-label="Multiresolution hash-grid cat video reconstruction">
+      <source src="/data/teaching/showcase/cat-hashgrid.mp4" type="video/mp4">
+      <a href="/data/teaching/showcase/cat-hashgrid.mp4">Watch the hash-grid reconstruction.</a>
+    </video>
+  </figure>
+</div>
+<h3 id="bach">Bach reconstruction</h3>
+<p>A single network reconstructs this Bach recording by mapping time to amplitude. The fitted hash-grid model uses less than half a MiB.</p>
+<div class="audio-comparison">
+  <p>Original<br>
+    <audio controls preload="metadata" aria-label="Original Bach recording">
+      <source src="/data/teaching/showcase/bach-original.wav" type="audio/wav">
+      <a href="/data/teaching/showcase/bach-original.wav">Listen to the original Bach recording.</a>
+    </audio>
+  </p>
+  <p>Network reconstruction<br>
+    <audio controls preload="metadata" aria-label="Bach reconstructed by one implicit network">
+      <source src="/data/teaching/showcase/bach-reconstruction.wav" type="audio/wav">
+      <a href="/data/teaching/showcase/bach-reconstruction.wav">Listen to the Bach reconstruction.</a>
+    </audio>
+  </p>
+</div>
+<p>Images, audio and video share the model design, with weights fitted separately for each signal.</p>
+</article>
+
+<a href="#top">[return to top]</a>
+</div>
+</div>
+</html>

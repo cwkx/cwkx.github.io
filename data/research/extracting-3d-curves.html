@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Extracting 3D curves from 2D images — Chris G. Willcocks</title>
+    <link rel="stylesheet" type="text/css" href="/data/style.css"/>
+    <link rel="shortcut icon" href="/data/logo.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90396229-1"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-90396229-1'); </script>
+  <style>pre { white-space: pre-wrap; overflow-wrap: anywhere; }</style>
+</head>
+<a id="top"></a>
+<div id="header">
+  <img id="headerLogo" src="/data/logo.svg" alt=""/>&nbsp;
+  <span id="headerLink">cwkx.com</span>
+  <span id="headerSubtitle">Research</span>
+</div>
+<hr class="hidden"/>
+<div id="menu">
+  <a href="/index.html">Home</a>
+  <a href="/blog.html"><b>Blog</b></a>
+  <a href="/publications.html">Publications</a>
+  <a href="/people.html">People</a>
+  <a href="/opportunities.html">Join as PhD/Postdoc</a>
+</div>
+<hr class="hidden"/>
+<div id="content">
+<div id="nav" role="navigation" aria-label="Post navigation">
+  <ul>
+    <li><a href="/blog.html#extract3d"><img src="/data/up-level.svg" width="16" height="16" alt="" style="vertical-align: -2px;"> back to blog</a></li>
+    <li><a href="/blog.html#research-posts">research</a>
+      <ul>
+        <li><a href="#extract3d" aria-current="page"><b>3D curves</b></a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<hr class="hidden"/>
+<div id="main">
+<p><a href="/blog.html#extract3d">[back to blog]</a></p>
+<h1 id="extract3d">Extracting 3D parametric curves from 2D images of helical objects</h1>
+<p><strong>Chris Willcocks</strong>, Philip Jackson, Carl Nelson, and Boguslaw Obara</p>
+<p><img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-0.png">
+<img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-1.png">
+<img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-2.png">
+<img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-3.png">
+<img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-4.png">
+<img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-5.png">
+<img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-6.png">
+<img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-7.png">
+<img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-8.png">
+<img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-9.png">
+<img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-10.png">
+<img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-11.png">
+<img class="paper-thumb-7" src="/data/articles/extract-3d-curve/paper-12.png"></p>
+<p><a href="https://doi.org/10.1109/TPAMI.2016.2613866">Click to <strong>go to full publication on IEEE Xplore</strong>.</a></p>
+<h3 id="abstract">Abstract</h3>
+<p>Helical objects occur in medicine, biology, cosmetics, nanotechnology, and engineering. Extracting a 3D parametric curve from a 2D image of a helical object has many practical applications, in particular being able to extract metrics such as tortuosity, frequency, and pitch. We present a method that is able to straighten the image object and derive a robust 3D helical curve from peaks in the object boundary. The algorithm has a small number of stable parameters that require little tuning, and the curve is validated against both synthetic and real-world data. The results show that the extracted 3D curve comes within close Hausdorff distance to the ground truth, and has near identical tortuosity for helical objects with a circular profile. Parameter insensitivity and robustness against high levels of image noise are demonstrated thoroughly and quantitatively.</p>
+<h3 id="overview">Overview</h3>
+<p>In this paper, we take a 2D image of a helical object and automatically fit a 3D curve to it. To do this, we first segment and straighten the helical object and then we find peaks on the boundaries of the helical object. The curve fits through these peaks.</p>
+<div class="note info">
+  <h3>Key processes</h3>
+  <p>
+   • Image segmentation<br>
+   • Image straightening<br>
+   • Curve fitting<br>
+  </p>
+</div>
+
+<h3 id="applications">Applications</h3>
+<p>The primary applications of this research are to retrieve a 3D model of 2D images of helical objects, e.g. for collecting measurements, where 3D imaging is currently too expensive or impossible.</p>
+<p>At a micro scale:</p>
+<ul>
+<li><strong>Biology</strong> and <strong>medicine</strong> (e.g. Spirulina, Spirochaetes, sperm, bacterial macrofibers, microtubules, keratin, DNA, dynamin).</li>
+<li><strong>Nanotechnology</strong> (e.g. helical nanostructures, such as: nanosprings and graphitic carbon microtubules).</li>
+</ul>
+<p>At a macro scale:</p>
+<ul>
+<li><strong>Medicine</strong> (e.g. umbilical cord).</li>
+<li><strong>Biology</strong> (e.g. climbing plants, twining vines, twisted trees, seashells, Arabidopsis root).</li>
+<li><strong>Cosmetics</strong> industry (e.g. hair).</li>
+<li><strong>Engineering</strong> (e.g. screws, coils, springs, synthetic fiber ropes).</li>
+</ul>
+<div class="note info">
+  <h3>Additional output 3D metrics include:</h3>
+  <p>
+   • Tortuosity<br>
+   • Radius<br>
+   • Pitch<br>
+   • Length<br>
+  </p>
+</div>
+
+<h3 id="areas-for-future-research">Areas for Future Research</h3>
+<p>To our knowledge, this is the first work that can automatically and robustly fit a 3D parametric curve to a single 2D image of a helical object. We believe there are several areas for improvement:</p>
+<ul>
+<li>In the future, a simpler algorithm for fitting 3D parametric curves to noisy 2D data will be found that doesn&#39;t require the straightening process. This will be faster and more robust, without the need for several parameters.</li>
+<li>The future research should focus on robustly capturing 2D polylines from 2D images and transforming the polyline geometry to capture the 2D helical structure. Extending the 2D polyline to a 3D piecewise helix is a well-researched area with good solutions.</li>
+</ul>
+<h3 id="code-usage">Code Usage</h3>
+<p>Our code is written in MATLAB. To use it, clone the github repository somewhere and add it to your MATLAB workspace, then simply edit the image, set the parameters and run the script <code>main.m</code>.</p>
+<p>
+<code>
+<pre>
+I = imread(&#39;leptospira.png&#39;);
+if (size(I,3) &gt; 1); I = rgb2gray(I); end;                                   fprintf(&#39;\tdone!\nSegmenting...&#39;);</p>
+% Adjust algorithm parameters (see paper for detailed explanations)
+straighten  = true;
+sigma       = 0.01;             % smoothing amount, try 0.15 for &#39;licerasiae.png&#39;
+d           = max(size(I))/20;  % minimum distance between peaks, set to 0 for images with lots of coils
+delta       = 50;
+omega       = max(size(I))/20;
+omicron     = 30;
+push        = true;
+
+% Run our algorithm steps
+[c,B]       = part1_segment(I);                                             fprintf(&#39;\t\tdone!\nStraightening... &#39;);
+[Bp,T]      = part2_straighten(B,c,delta,omega,omicron,straighten);         fprintf(&#39;\tdone!\nFitting... &#39;);
+[p]         = part3_fitting(Bp,sigma,d,push);                               fprintf(&#39;\t\t\tdone!\nUndo transforms... &#39;);
+[tp]        = part4_undo_transforms(p,T,straighten);                        fprintf(&#39;\tdone!\n&#39;);
+
+% Create our cubic spline (cs) through the transformed curve control points tp
+cs = cscvn(tp);
+cs = fnplotdense(cs);
+
+% We can also use the straight spline (ss) from control points p
+ss = cscvn(p);
+ss = fnplotdense(ss);
+
+% Example 3D metrics from the straight spline
+tortuosity  = sum(sqrt(sum(diff(ss,1,2).^2,1))) / sqrt(sum((ss(:,end) - ss(:,1)).^2));
+peaks       = floor(length(p)/2);
+</pre>
+</code>
+</p>
+<div class="note">
+  <h5>Github:</h5>
+  <p>
+   Sources for this paper can be <a href="https://github.com/cwkx/extract-3d-curve">downloaded here</a>. These are well-documented and reflect the paper&#39;s method.
+  </p>
+</div>
+<h3 id="citation">Citation</h3>
+<p>Please cite our paper:
+<code>
+  <pre>
+@article{willcocks-2016-extract-3d-curve,
+  author   = {C. Willcocks and P. Jackson and C. Nelson and B. Obara},
+  journal  = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  title    = {Extracting 3D Parametric Curves from 2D Images of Helical Objects},
+  year     = {2016},
+  volume   = {PP},
+  number   = {99},
+  pages    = {1-1},
+  doi      = {10.1109/TPAMI.2016.2613866},
+  ISSN     = {0162-8828},
+  month    = {},
+}
+  </pre>
+</code>
+</p>
+
+
+<a href="#top">[return to top]</a>
+</div>
+</div>
+</html>

@@ -1,0 +1,15 @@
+# Local configuration
+/.aws
+/.agents/
+/.codex/
+/.env
+/.env.*
+!/.env.example
+
+# Python
+/.venv/
+__pycache__/
+*.py[cod]
+
+# OS metadata
+.DS_Store

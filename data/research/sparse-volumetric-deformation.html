@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Sparse volumetric deformation — Chris G. Willcocks</title>
+    <link rel="stylesheet" type="text/css" href="/data/style.css"/>
+    <link rel="shortcut icon" href="/data/logo.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90396229-1"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-90396229-1'); </script>
+  <style>pre { white-space: pre-wrap; overflow-wrap: anywhere; }</style>
+</head>
+<a id="top"></a>
+<div id="header">
+  <img id="headerLogo" src="/data/logo.svg" alt=""/>&nbsp;
+  <span id="headerLink">cwkx.com</span>
+  <span id="headerSubtitle">Research</span>
+</div>
+<hr class="hidden"/>
+<div id="menu">
+  <a href="/index.html">Home</a>
+  <a href="/blog.html"><b>Blog</b></a>
+  <a href="/publications.html">Publications</a>
+  <a href="/people.html">People</a>
+  <a href="/opportunities.html">Join as PhD/Postdoc</a>
+</div>
+<hr class="hidden"/>
+<div id="content">
+<div id="nav" role="navigation" aria-label="Post navigation">
+  <ul>
+    <li><a href="/blog.html#svd"><img src="/data/up-level.svg" width="16" height="16" alt="" style="vertical-align: -2px;"> back to blog</a></li>
+    <li><a href="/blog.html#research-posts">research</a>
+      <ul>
+        <li><a href="#svd" aria-current="page"><b>volumetric deformation</b></a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<hr class="hidden"/>
+<div id="main">
+<p><a href="/blog.html#svd">[back to blog]</a></p>
+<h1 id="svd">Sparse volumetric deformation</h1>
+<p><em>Selected photos from 2013 thesis below:</em></p>
+<p><img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-1.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-14.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-23.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-34.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-36.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-43.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-50.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-56.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-74.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-92.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-97.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-98.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-100.png">
+<img class="paper-thumb-7" src="/data/articles/sparse-volumetric-deformation/paper-110.png"></p>
+<p><a href="//etheses.dur.ac.uk/8471/">Click to <strong>go to full publication on Durham e-thesis Link</strong>.</a></p>
+<h3 id="overview">Overview</h3>
+<p>This thesis was split into two sections: 1. my attempt to come up with a way to render large amounts of animated voxel models, and 2. my skeletonization work.</p>
+<p>The renderer itself was somewhat unique and written mainly in CUDA with C++. Very briefly, the key ideas were using skeleton-mapped sparse voxel octrees for each animated model stored on disk, and paged through the memory-levels at resolutions of interest, then the renderer itself makes heavy use of instancing and top-down occlusion culling. Although it was reasonably efficient at rendering large scenes, the limitation was overly using parallel stream-compaction to discard unimportant chunks, and relying on forward transformations for the animation. It had a few key contributions, such as simple solutions to prevent holes/gaps with forward transformations by altering the rendered hierarchy (lowering the voxel resolution to fill gaps).</p>
+<h3 id="future-work">Future Work</h3>
+<p>I had more success using implicit surfaces, e.g. storing the distance transforms of 3D models in 3D texture memory at multiple resolutions. Animation is then achieved with traditional <a href="https://www.shadertoy.com/results?query=ray+marching">ray marching</a> into the texture volumes (whose external bounds are defined by cube functions). This allows for cool tricks such as smooth implicit blending to get nice looking deformations, e.g. taking the smooth minimum between nearby/connected volumes. I started to investigate automatically splitting up models into smaller distance transform volumes for each animated bone, but sadly I wasn&#39;t able to publish these results into my thesis due to time constraints. For future researchers who stumble on this page with the goal of animating lots of volumetric content, I recommend looking into implicit surfaces above traditional sparse voxel octrees.</p>
+<h3 id="citation">Citation</h3>
+<p>Please cite the thesis with:</p>
+<p>
+<code>
+  <pre>
+@phdthesis{willcocks-2013-sparse-volumetric-deformation,
+  title  = {Sparse Volumetric Deformation},
+  author = {Chris G. Willcocks},
+  year   = {2013},
+  school = {Durham University},
+  url    = {<a href="http://etheses.dur.ac.uk/8471/">http://etheses.dur.ac.uk/8471/</a>},
+}
+  </pre>
+</code>
+</p>
+
+
+<a href="#top">[return to top]</a>
+</div>
+</div>
+</html>

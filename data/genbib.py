@@ -1,5 +1,5 @@
 # script to automatically generate html from bibtex entries, will remove old html
-# requires pybtex, pybtex-apa-style
+# requires pybtex, pybtex-apa-style, six
 # uses https://flamingtempura.github.io/bibtex-tidy/ with sort bibliography entries: "-year -month -day title author"
 
 import pybtex.database.input.bibtex
@@ -11,10 +11,27 @@ import re
 import time
 from pybtex.plugin import find_plugin
 from pybtex.database import parse_string
+from pybtex.style.template import join, node
 
-selected_publications = ['bond2024infty', 'bondtaylor2022deep', 'corona2023unaligned', 'bond2020gradient', 'leach2022denoising']
+selected_publications = ['bond2024infty', 'bondtaylor2022deep', 'newbould2026gridflow', 'bond2020gradient', 'leach2022denoising']
 
-APA = find_plugin('pybtex.style.formatting', 'apa')()
+APAStyle = find_plugin('pybtex.style.formatting', 'apa')
+
+@node
+def abbreviated_names(children, context, role, as_sentence=True):
+    # Respect BibTeX's standard "and others" marker for long author lists.
+    style = context['style']
+    persons = context['entry'].persons.get(role, [])
+    if persons and str(persons[-1]) == 'others':
+        names = [style.format_name(person, style.abbreviate_names) for person in persons[:-1]]
+        return join(sep=', ')[names + ['et al.']].format_data(context)
+    return APAStyle.format_names(style, role, as_sentence).format_data(context)
+
+class PublicationStyle(APAStyle):
+    def format_names(self, role, as_sentence=True):
+        return abbreviated_names(role, as_sentence=as_sentence)
+
+APA = PublicationStyle()
 HTML = find_plugin('pybtex.backends', 'html')()
 
 def filter_by(bibliography, words):
@@ -38,10 +55,11 @@ def bib2html(bibliography, keys=None, spacing=True):
         formattedBib.entries = tmp
     output = '<ul>'
     for entry in formattedBib:
+        entry_html = re.sub(r'\((\d{4})\s+,', r'(\1,', entry.text.render(HTML))
         if spacing:
-            output += '<li class="x">'+entry.text.render(HTML)+'</li>'
+            output += '<li class="x">'+entry_html+'</li>'
         else:
-            output += '<li>'+entry.text.render(HTML)+'</li>'
+            output += '<li>'+entry_html+'</li>'
             
     return output+'</ul>'
 

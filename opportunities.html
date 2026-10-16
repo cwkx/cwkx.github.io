@@ -3,25 +3,29 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Chris G. Willcocks Research Group</title>
+    <title>Join as PhD/Postdoc — Chris G. Willcocks</title>
     <link rel="stylesheet" type="text/css" href="/data/style.css"/>
     <link rel="shortcut icon" href="/data/logo.png">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90396229-1"></script>
     <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-90396229-1'); </script>
+  <style>
+    .durham-photos { display: flex; flex-wrap: wrap; gap: 1em 5px; }
+    .durham-photos figure { margin: 0; max-width: 100%; text-align: center; }
+    .durham-photos img { display: block; width: auto; height: auto; max-width: 100%; max-height: 150px; margin: 0 auto; }
+  </style>
 </head>
 <a id="top"></a>
 <div id="header">
   <img id="headerLogo" src="/data/logo.svg" alt=""/>&nbsp;
   <span id="headerLink">cwkx.com</span>
-  <span id="headerSubtitle">Research Group</span>
+  <span id="headerSubtitle">Research</span>
 </div>
 <hr class="hidden"/>
 <div id="menu">
   <a href="index.html">Home</a>
+  <a href="/blog.html">Blog</a>
   <a href="publications.html">Publications</a>
   <a href="people.html">People</a>
-  <a href="research.html">Research</a>
-  <a href="teaching.html">Teaching</a>
   <a href="opportunities.html"><b>Join as PhD/Postdoc</b></a>
 </div>
 <hr class="hidden"/>
@@ -29,51 +33,54 @@
 <div id="nav">
   <ul>
   <li><a href="#"><b>join</b></a></li>
-  <li><a href="#projects">projects</a></li>
-  <li><a href="#phds">funding</a></li>
+  <li><a href="#projects">research directions</a></li>
   <li><a href="#research">research</a></li>
+  <li><a href="#applications">application process</a></li>
+  <li><a href="#phds">funding</a></li>
   <li><a href="#visiting">visiting</a></li>
   </ul>
 </div>
 <hr class="hidden"/>
 <div id="main">
-  <h2 id="projects">PhD Projects</h2>
-  <p>We're looking for potential PhD students to join our group. These are two interesting research questions:</p>
-  <ul>
-    <li><em>How do we collectively decide what to do?</em></li>
-    <ul>
-      <li>As humans, we set goals and discover knowledge without depending on environment reward. Intelligent people don't sit in front of the TV all day; they are active and constantly explore at the fringes of their knowledge while trying to collectively figure out the rules of the universe. How do we model this problem of deciding what to do? In the future, I think we will understand the fundamental mathematical principles that allow us to build increasingly autonomous agentic systems that learn their own language, skills, rules, communication, and exploration strategies without relying on reward explicitly determined by the environment.</li>
-    </ul>
-    <br>
-    <li><em>How do we build unified multimodal generative models?</em></li>
-    <ul>
-      <li>There are currently about 7 key equation classes in the generative modelling literature, most of which estimate the probability of data. Each related modelling approach (Autoregressive, Flows, Diffusion, GANs, VAEs, OT, ...) have trade-offs in terms of (i) modelling quality, (i) inference time/depth, and (iii) distribution coverage/mode collapse. In the future, I think we will have richer theoretical insight into these trade-offs beyond next token prediction in restricted modalities, and more adaptive and expressive ways to model generic multimodal distributions of data.</li>
-    </ul>
-    <br>
-  </ul>
-  <p>Do you have thoughts on this? Would you like to explore similar research? Drop me an email at <a href="mailto:christopher.g.willcocks@durham.ac.uk">christopher.g.willcocks@durham.ac.uk</a> to discuss.</p>
-<h2 id="phds">PhD Funding</h2>
-<p>Please read the <a href="https://www.durham.ac.uk/study/postgraduate/research-degrees/fees-and-funding/funding-your-studies/">guidelines for securing funding</a> along with other guidance such as the <a href="https://www.durham.ac.uk/study/postgraduate/research-degrees/how-to-apply/">entry and language requirements</a>. There are a number of ways to secure funding including Durham Doctoral Studentships (DDS) which are fully-funded 3.5 year PhD studentships. Please contact me to discuss a proposal and send me your CV along with a statement of your research interests.</p>
-<p>Students can also receive scholarships from their home countries, Please see <a href="https://www.dur.ac.uk/study/scholarships/postgraduate/">the following link for more information</a> about eligibility. Alternatively, you may wish to self-fund your studies, please email me if this is something you wish to consider.</p>
+<h2 id="projects">Research directions</h2>
+<p>Our group studies fundamental approaches to deep learning and reinforcement learning, exploring how future AI could differ from today’s architectures. We believe future agents will be:</p>
+<ul>
+  <li>Adaptive: able to instantly change their architecture within a fixed hardware budget as the task distribution changes, without thousands of gradient descent steps.</li>
+  <li>Self-wiring: able to change their own internal programs over time, reusing general-purpose components or creating new functions for the task at hand.</li>
+  <li>Collective: better at working together, for example by building and using shared temporal knowledge graphs.</li>
+  <li>Tokenizer-free: free from the fixed tokenization choices behind many of the problems <a href="https://www.youtube.com/watch?v=zduSFxRajkE">Karpathy highlights</a>.</li>
+  <li>Compressed: eventually reaching a point where cognitive cores and internal models stop growing and become smaller and simpler. This view draws on Kolmogorov complexity and <a href="https://simons.berkeley.edu/talks/ilya-sutskever-openai-2023-08-14">Sutskever’s discussion of compression and generalisation</a>.</li>
+</ul>
+<p>If you would like to explore these directions or similar through PhD or postdoctoral research, <a href="mailto:christopher.g.willcocks@durham.ac.uk">email me</a>.</p>
 <h2 id="research">Research at Durham</h2>
-<p>Durham is a beautiful historic cathedral city situated in the north-east of England, where the University has long traditions but modern values. The deparment of Computer Science has a wonderful friendly and supportive culture with access to exceptional resources such as a world class supercomputer, Hamilton, and we have access to the new EPSRC Tier 2 National HPC facility (“BEDE”) hosted in Durham and operated by ARC on behalf of the N8 Universities. The department of Computer Science boasts an impressive new £42 million building and maintains our own NVIDIA Compute Center (with hundreds of thousands of pounds worth of GPUs) configured for Deep Learning.</p>
-<div style="overflow-x:auto;">
-<table style="border-spacing: 5px 0;">
-  <tr>
-      <td><img style="vertical-align:middle; width:auto; height: 150px;" alt="Cathedral" src="data/articles/opportunities/durham1-prog.jpg"></td>
-      <td><img style="vertical-align:middle; width:auto; height: 150px;" alt="view" src="data/articles/opportunities/durham2-prog.jpg"></td>
-      <td><img style="vertical-align:middle; width:auto; height: 150px;" alt="view" src="data/articles/opportunities/compsci-prog.jpg"></td>
-  </tr>
-  <tr>
-      <td style="text-align:center;">Cathedral View</td>
-      <td style="text-align:center;">Framwellgate Bridge</td>
-      <td style="text-align:center;">Maths and Computer Science</td>
-  </tr>
-</table>
+<p>Durham is a beautiful historic cathedral city situated in the north-east of England, where the University has long traditions but modern values. The department of Computer Science has a wonderful friendly and supportive culture with access to exceptional resources such as a world class supercomputer, Hamilton, and we have access to the EPSRC Tier 2 National HPC facility (“BEDE”) hosted in Durham and operated by ARC on behalf of the N8 Universities. The department of Computer Science boasts an impressive £42 million building and maintains our own NVIDIA Compute Center (with hundreds of thousands of pounds worth of GPUs) configured for Deep Learning.</p>
+<div class="durham-photos">
+  <figure>
+    <img alt="Durham Cathedral" src="data/articles/opportunities/durham1-prog.jpg">
+    <figcaption>Cathedral View</figcaption>
+  </figure>
+  <figure>
+    <img alt="Framwellgate Bridge" src="data/articles/opportunities/durham2-prog.jpg">
+    <figcaption>Framwellgate Bridge</figcaption>
+  </figure>
+  <figure>
+    <img alt="Maths and Computer Science building" src="data/articles/opportunities/compsci-prog.jpg">
+    <figcaption>Maths and Computer Science</figcaption>
+  </figure>
 </div>
 <br>
-<h2 id="visiting">Visiting Scholars</h2>
-<p>If you are interested in a visiting position, either as an academic scholar or as a PhD student, please email me as above. I am interested in candidates with strong mathematical ability in statistics, machine learning, or geometry. Durham has particularly low living/housing/accomodation costs coupled with an exceptionally high-quality of life, and our building is designed to be accessible for parents.</p>
+<h2 id="applications">PhD application process</h2>
+<ol>
+  <li><a href="mailto:christopher.g.willcocks@durham.ac.uk">Email your CV</a> with a brief outline of your research interests and background. Strong candidates will be invited to a short interview and discussion of their proposal.</li>
+  <li>You will be invited to <a href="https://www.durham.ac.uk/study/postgraduate/research-degrees/how-to-apply/">submit your PhD application</a> when the system opens in October, aiming to apply before mid-December.</li>
+  <li>The department reviews your application against its entry requirements. If successful, you receive an offer for a PhD place. Scholarship funding is considered separately.</li>
+  <li>In early January, once details of the scholarship round are released, we prepare and submit a separate funding application together. We help with the additional documents, including statements on the project’s strategic fit and the proposed supervision team.</li>
+</ol>
+<h2 id="phds">PhD funding</h2>
+<p>Please read the <a href="https://www.durham.ac.uk/study/postgraduate/research-degrees/fees-and-funding/funding-your-studies/">guidelines for securing funding</a> along with other guidance such as the <a href="https://www.durham.ac.uk/study/postgraduate/research-degrees/how-to-apply/">entry and language requirements</a>. There are a number of ways to secure funding including Durham Doctoral Studentships (DDS) which are fully-funded 3.5 year PhD studentships.</p>
+<p>Students can also receive scholarships from their home countries. Please see <a href="https://www.dur.ac.uk/study/scholarships/postgraduate/">the following link for more information</a> about eligibility. Alternatively, you may wish to self-fund your studies; please email me if this is something you wish to consider.</p>
+<h2 id="visiting">Visiting scholars</h2>
+<p>If you are interested in a visiting position, either as an academic scholar or as a PhD student, please email me as above. I am interested in candidates with strong mathematical ability in statistics, machine learning, or geometry. Durham has particularly low living/housing/accommodation costs coupled with an exceptionally high quality of life, and our building is designed to be accessible for parents.</p>
 </div>
 </div>
 </html>

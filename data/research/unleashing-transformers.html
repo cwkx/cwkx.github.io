@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Unleashing transformers — Chris G. Willcocks</title>
+    <link rel="stylesheet" type="text/css" href="/data/style.css"/>
+    <link rel="shortcut icon" href="/data/logo.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90396229-1"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-90396229-1'); </script>
+  <style>pre { white-space: pre-wrap; overflow-wrap: anywhere; }</style>
+</head>
+<a id="top"></a>
+<div id="header">
+  <img id="headerLogo" src="/data/logo.svg" alt=""/>&nbsp;
+  <span id="headerLink">cwkx.com</span>
+  <span id="headerSubtitle">Research</span>
+</div>
+<hr class="hidden"/>
+<div id="menu">
+  <a href="/index.html">Home</a>
+  <a href="/blog.html"><b>Blog</b></a>
+  <a href="/publications.html">Publications</a>
+  <a href="/people.html">People</a>
+  <a href="/opportunities.html">Join as PhD/Postdoc</a>
+</div>
+<hr class="hidden"/>
+<div id="content">
+<div id="nav" role="navigation" aria-label="Post navigation">
+  <ul>
+    <li><a href="/blog.html#unleashing-transformers"><img src="/data/up-level.svg" width="16" height="16" alt="" style="vertical-align: -2px;"> back to blog</a></li>
+    <li><a href="/blog.html#research-posts">research</a>
+      <ul>
+        <li><a href="#unleashing-transformers" aria-current="page"><b>transformers</b></a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<hr class="hidden"/>
+<div id="main">
+<p><a href="/blog.html#unleashing-transformers">[back to blog]</a></p>
+<h1 id="unleashing-transformers">Unleashing transformers: parallel token prediction with discrete absorbing diffusion for fast high-resolution image generation from vector-quantized codes</h1>
+<div class="icons">
+    <a href="https://arxiv.org/abs/2111.12701"><span> arXiv</span></a>
+    <a href="https://github.com/samb-t/unleashing-transformers"><span> github code</span></a>
+</div>
+
+<div class="content">
+  <h2 id="summary">Summary</h2>
+  <p>
+  Accepted at ECCV. We propose a novel parallel token prediction approach for generating VQ image representations that allows for significantly faster sampling than autoregressive approaches. Our approach achieves state-of-the-art results and can generate high-resolution images surpassing the original training data's resolution.
+  </p>
+  <center>
+    <img width="100%" src="/data/articles/research-news/unleashing-transformers/unleashing-transformers-samples.jpg" alt="Examples of unconditional samples from our models">
+  </center>
+  
+  <h2 id="approach">Approach</h2>
+  <p>
+  We utilize a Vector-Quantized (VQ) image model to compress images into a discrete latent space. An absorbing diffusion model then learns the latent distribution, allowing us to generate high-resolution images rapidly, without the need for time-consuming autoregressive methods.
+  </p>
+  <center>
+    <img width="100%" src="/data/articles/research-news/unleashing-transformers/unleashing-transformers-diagram.jpg" alt="Our approach diagram">
+  </center>
+  
+  <h2 id="evaluation">Evaluation</h2>
+  <p>
+  Our method has been rigorously evaluated on multiple high-resolution datasets, including LSUN Churches, LSUN Bedroom, and FFHQ. Despite its efficiency and reduced parameter count, our approach achieves comparable or better results against other VQ image models.
+  </p>
+  <center>
+    <img width="100%" src="/data/articles/research-news/unleashing-transformers/unleashing-transformers-tables.png" alt="Quantitative evaluation table">
+  </center>
+  <p>
+    We also support outpainting (synthesise image regions outside the training data), inpainting, and control over the sample diversity.
+    </p>
+  <center>
+    <img width="100%" src="/data/articles/research-news/unleashing-transformers/unleashing-transformers-big-churches.jpg" alt="High resolution samples">
+    <img width="50%" src="/data/articles/research-news/unleashing-transformers/temperature_figure.jpg" alt="We offer control over sample diversity.">
+  </center>
+
+    <h2 id="citation">Citation</h2>
+    <p>Please cite the article with:</p>
+    <code>
+      <pre>
+@inproceedings{bond2022unleashing,
+  title={Unleashing Transformers: Parallel token prediction with discrete absorbing diffusion for fast high-resolution image generation from vector-quantized codes},
+  author={Bond-Taylor, Sam and Hessey, Peter and Sasaki, Hiroshi and Breckon, Toby P and Willcocks, Chris G},
+  booktitle={European Conference on Computer Vision},
+  pages={170--188},
+  year={2022},
+  organization={Springer}
+}
+      </pre>
+    </code>
+    <hr>
+</div>
+
+<a href="#top">[return to top]</a>
+</div>
+</div>
+</html>

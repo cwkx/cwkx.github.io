@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Deep learning protein conformational space — Chris G. Willcocks</title>
+    <link rel="stylesheet" type="text/css" href="/data/style.css"/>
+    <link rel="shortcut icon" href="/data/logo.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90396229-1"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-90396229-1'); </script>
+  <style>pre { white-space: pre-wrap; overflow-wrap: anywhere; }</style>
+</head>
+<a id="top"></a>
+<div id="header">
+  <img id="headerLogo" src="/data/logo.svg" alt=""/>&nbsp;
+  <span id="headerLink">cwkx.com</span>
+  <span id="headerSubtitle">Research</span>
+</div>
+<hr class="hidden"/>
+<div id="menu">
+  <a href="/index.html">Home</a>
+  <a href="/blog.html"><b>Blog</b></a>
+  <a href="/publications.html">Publications</a>
+  <a href="/people.html">People</a>
+  <a href="/opportunities.html">Join as PhD/Postdoc</a>
+</div>
+<hr class="hidden"/>
+<div id="content">
+<div id="nav" role="navigation" aria-label="Post navigation">
+  <ul>
+    <li><a href="/blog.html#dlproteins"><img src="/data/up-level.svg" width="16" height="16" alt="" style="vertical-align: -2px;"> back to blog</a></li>
+    <li><a href="/blog.html#research-posts">research</a>
+      <ul>
+        <li><a href="#dlproteins" aria-current="page"><b>protein conformations</b></a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<hr class="hidden"/>
+<div id="main">
+<p><a href="/blog.html#dlproteins">[back to blog]</a></p>
+<h1 id="dlproteins">Deep learning protein conformational space with convolutions and latent interpolations</h1>
+<p>
+  <a href="https://journals.aps.org/prx/abstract/10.1103/PhysRevX.11.011052">This work has been accepted at Physical Review X, 2021</a>. We present a convolutional neural network that learns a continuous conformational space representation from example structures, and loss functions that ensure intermediates between examples are physically plausible. We show that this network, trained with simulations of distinct protein states, can correctly predict a biologically relevant transition path, without any example on the path provided.
+</p>
+<center>
+  <img width="100%" src="/data/articles/research-news/dl-protein-space.png">
+  </center>
+<p>
+  Proteins carry out a range of essential biological functions including catalysis, sensing, motility, transport, and defense. These molecules function independently or in unison with other molecules, such as DNA, drugs, or other proteins. To perform these functions, a protein must often change its shape (or conformation), but identifying the possible conformations of a protein is not an easy task. We present a methodology that combines molecular simulation and machine learning to discover transition paths between protein conformational states.
+</p>
+<p>
+Current experimental techniques provide a good picture of the most stable conformations and little to nothing on the transition path or intermediate states. Despite the importance of these intermediate conformations for pharmaceutical drug targeting purposes, determining them with high reliability remains a challenging problem. We overcome this hurdle with a neural network that can generate new protein conformations after being trained with examples from experiments or molecular simulations. The network is capable of generating structures that respect physical laws.
+</p>
+<h2>Citation</h2>
+<p>Please cite the article with:</p>
+<code>
+  <pre>
+@article{ramaswamy2021deep,
+  title     = {Deep Learning Protein Conformational Space with Convolutions and Latent Interpolations},
+  author    = {Ramaswamy, Venkata K. and Musson, Samuel C. and Willcocks, Chris G. and Degiacomi, Matteo T.},
+  journal   = {Phys. Rev. X},
+  volume    = {11},
+  issue     = {1},
+  pages     = {011052},
+  numpages  = {13},
+  year      = {2021},
+  month     = {Mar},
+  publisher = {American Physical Society},
+  doi       = {10.1103/PhysRevX.11.011052}
+}
+  </pre>
+</code>
+
+
+<a href="#top">[return to top]</a>
+</div>
+</div>
+</html>

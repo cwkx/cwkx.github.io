@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Measuring macular holes in 3D — Chris G. Willcocks</title>
+    <link rel="stylesheet" type="text/css" href="/data/style.css"/>
+    <link rel="shortcut icon" href="/data/logo.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90396229-1"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-90396229-1'); </script>
+  <style>pre { white-space: pre-wrap; overflow-wrap: anywhere; }</style>
+</head>
+<a id="top"></a>
+<div id="header">
+  <img id="headerLogo" src="/data/logo.svg" alt=""/>&nbsp;
+  <span id="headerLink">cwkx.com</span>
+  <span id="headerSubtitle">Research</span>
+</div>
+<hr class="hidden"/>
+<div id="menu">
+  <a href="/index.html">Home</a>
+  <a href="/blog.html"><b>Blog</b></a>
+  <a href="/publications.html">Publications</a>
+  <a href="/people.html">People</a>
+  <a href="/opportunities.html">Join as PhD/Postdoc</a>
+</div>
+<hr class="hidden"/>
+<div id="content">
+<div id="nav" role="navigation" aria-label="Post navigation">
+  <ul>
+    <li><a href="/blog.html#multiscale"><img src="/data/up-level.svg" width="16" height="16" alt="" style="vertical-align: -2px;"> back to blog</a></li>
+    <li><a href="/blog.html#research-posts">research</a>
+      <ul>
+        <li><a href="#multiscale" aria-current="page"><b>macular holes</b></a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<hr class="hidden"/>
+<div id="main">
+<p><a href="/blog.html#multiscale">[back to blog]</a></p>
+<h1 id="multiscale">Multi-scale segmentation and surface fitting for measuring 3D macular holes</h1>
+<p><em>Selected photos from the paper below:</em></p>
+<p>
+<img class="paper-thumb-7" src="/data/articles/multiscale-3d-macular/paper-1.png">
+<img class="paper-thumb-7" src="/data/articles/multiscale-3d-macular/paper-3.png">
+<img class="paper-thumb-7" src="/data/articles/multiscale-3d-macular/paper-4.png">
+<img class="paper-thumb-7" src="/data/articles/multiscale-3d-macular/paper-6.png">
+<img class="paper-thumb-7" src="/data/articles/multiscale-3d-macular/paper-7.png">
+<img class="paper-thumb-7" src="/data/articles/multiscale-3d-macular/paper-8.png">
+<img class="paper-thumb-7" src="/data/articles/multiscale-3d-macular/paper-9.png">
+<!-- <img class="paper-thumb-7" src="/data/articles/multiscale-3d-macular/paper-10.png"> -->
+</p>
+<p><a href="https://ieeexplore.ieee.org/document/8089387">Click to <strong>go to full publication on IEEE Xplore</strong>.</a></p>
+<h3>Abstract</h3>
+<p>
+Macular holes are blinding conditions, where a hole develops in the central part of retina, resulting in reduced central vision. The prognosis and treatment options are related to a number of variables, including the macular hole size and shape. High-resolution spectral domain optical coherence tomography allows precise imaging of the macular hole geometry in three dimensions, but the measurement of these by human observers is time-consuming and prone to high inter- and intra-observer variability, being characteristically measured in 2-D rather than 3-D. We introduce several novel techniques to automatically retrieve accurate 3-D measurements of the macular hole, including: surface area, base area, base diameter, top area, top diameter, height, and minimum diameter. Specifically, we introduce a multi-scale 3-D level set segmentation approach based on a state-of-the-art level set method, and we introduce novel curvature-based cutting and 3-D measurement procedures. The algorithm is fully automatic, and we validate our extracted measurements both qualitatively and quantitatively, where our results show the method to be robust across a variety of scenarios. Our automated processes are considered a significant contribution for clinical applications.
+</p>
+<h3>Overview</h3>
+<p>Given a 3D OCT image of a Macular Hole, this paper presents a fast and accurate fully-automated 3D level set segmentation method.</p>
+<center>
+<img width="100%" src="/data/articles/multiscale-3d-macular/method.png">
+</center>
+The method automatically outputs several metrics and measurements using novel methods, and is shown to give state-of-the-art performance in comparison to previous approaches.<br><br>
+<center>
+<img width="50%" src="/data/articles/multiscale-3d-macular/outputs.png">
+</center>
+<h3 id="citation">Citation</h3>
+<p>Please cite the article with:</p>
+<p>
+<code>
+  <pre>
+@article{nasrulloh2017multiscale,
+  author   = {A. V. Nasrulloh and C. G. Willcocks and P. T. G. Jackson and C. Geenen and M. S. Habib and D. H. W. Steel and B. Obara},
+  journal  = {IEEE Transactions on Medical Imaging},
+  title    = {Multi-scale Segmentation and Surface Fitting for Measuring 3D Macular Holes},
+  year     = {2018},
+  month    = {2},
+  volume   = {37},
+  pages    = {580-589},
+  doi      = {10.1109/TMI.2017.2767908},
+  ISSN     = {0278-0062}
+}
+  </pre>
+</code>
+</p>
+
+
+
+<a href="#top">[return to top]</a>
+</div>
+</div>
+</html>
