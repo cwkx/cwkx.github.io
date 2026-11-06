@@ -1,0 +1,20 @@
+.zoom-post .zoom-figure {
+  margin: 1em 0;
+}
+
+.zoom-post .zoom-figure > a {
+  display: block;
+}
+
+.zoom-post .zoom-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 640px) {
+  .zoom-post .zoom-figure img {
+    aspect-ratio: 1 / 3;
+  }
+}
+
