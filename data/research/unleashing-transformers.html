@@ -39,6 +39,7 @@
 <hr class="hidden"/>
 <div id="main">
 <p><a href="/blog.html#unleashing-transformers">[back to blog]</a></p>
+<article aria-labelledby="unleashing-transformers">
 <h1 id="unleashing-transformers">Unleashing transformers: parallel token prediction with discrete absorbing diffusion for fast high-resolution image generation from vector-quantized codes</h1>
 <div class="icons">
     <a href="https://arxiv.org/abs/2111.12701"><span> arXiv</span></a>
@@ -53,7 +54,7 @@
   <center>
     <img width="100%" src="/data/articles/research-news/unleashing-transformers/unleashing-transformers-samples.jpg" alt="Examples of unconditional samples from our models">
   </center>
-  
+
   <h2 id="approach">Approach</h2>
   <p>
   We utilize a Vector-Quantized (VQ) image model to compress images into a discrete latent space. An absorbing diffusion model then learns the latent distribution, allowing us to generate high-resolution images rapidly, without the need for time-consuming autoregressive methods.
@@ -61,7 +62,7 @@
   <center>
     <img width="100%" src="/data/articles/research-news/unleashing-transformers/unleashing-transformers-diagram.jpg" alt="Our approach diagram">
   </center>
-  
+
   <h2 id="evaluation">Evaluation</h2>
   <p>
   Our method has been rigorously evaluated on multiple high-resolution datasets, including LSUN Churches, LSUN Bedroom, and FFHQ. Despite its efficiency and reduced parameter count, our approach achieves comparable or better results against other VQ image models.
@@ -93,6 +94,7 @@
     </code>
     <hr>
 </div>
+</article>
 
 <a href="#top">[return to top]</a>
 </div>

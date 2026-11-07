@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>∞-Diff: infinite resolution diffusion — Chris G. Willcocks</title>
+  <link rel="stylesheet" type="text/css" href="/data/style.css"/>
+  <link rel="shortcut icon" href="/data/logo.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90396229-1"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-90396229-1');</script>
+  <style>pre { white-space: pre-wrap; overflow-wrap: anywhere; }</style>
+</head>
+<body>
+<a id="top"></a>
+<div id="header">
+  <img id="headerLogo" src="/data/logo.svg" alt=""/>&nbsp;
+  <span id="headerLink">cwkx.com</span>
+  <span id="headerSubtitle">Research</span>
+</div>
+<hr class="hidden"/>
+<div id="menu">
+  <a href="/index.html">Home</a>
+  <a href="/blog.html"><b>Blog</b></a>
+  <a href="/publications.html">Publications</a>
+  <a href="/people.html">People</a>
+  <a href="/opportunities.html">Join as PhD/Postdoc</a>
+</div>
+<hr class="hidden"/>
+<div id="content">
+<div id="nav" role="navigation" aria-label="Post navigation">
+  <ul>
+    <li><a href="/blog.html#infty-diff"><img src="/data/up-level.svg" width="16" height="16" alt="" style="vertical-align: -2px;"> back to blog</a></li>
+    <li><a href="/blog.html#research-posts">research</a>
+      <ul>
+        <li><a href="#infty-diff" aria-current="page"><b>infty-diff</b></a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<hr class="hidden"/>
+<div id="main">
+<p><a href="/blog.html#infty-diff">[back to blog]</a></p>
+<article aria-labelledby="infty-diff">
+<h1 id="infty-diff">∞-Diff: infinite resolution diffusion</h1>
+<p>
+  This research uses diffusion models to generate images at any resolution while retaining sharp detail. <a href="https://openreview.net/forum?id=OUeIBFhyem">∞-Diff</a>, accepted at ICLR 2024, models images as continuous functions and learns by denoising randomly sampled coordinates, reducing how much of each image needs to be processed:
+</p>
+<figure class="paper-figure">
+  <a href="/data/articles/infty-diff/overview.webp"><img src="/data/articles/infty-diff/overview.webp" width="1600" height="384" loading="lazy" decoding="async" alt="Neural operators denoise randomly sampled image coordinates, with the resulting model able to generate faces at different resolutions."></a>
+  <figcaption>Denoising sparse coordinates with neural operators.</figcaption>
+</figure>
+<p>
+  Neural operators share information between coordinates without first compressing the image into a latent vector. Our multiscale architecture combines local processing of sparse points with a regular grid for global context. A mollified diffusion process smooths its states, making them easier to model with continuous operators. The same model can then sample beyond its training resolution:
+</p>
+<figure class="paper-figure">
+  <a href="/data/articles/infty-diff/resolutions.webp"><img src="/data/articles/infty-diff/resolutions.webp" width="2560" height="512" loading="lazy" decoding="async" alt="Generated faces at resolutions from 64 by 64 through 128, 256 and 512 to 1024 by 1024, using one model trained at 256 by 256."></a>
+  <figcaption>Left to right: 64², 128², 256² (training resolution), 512² and 1024².</figcaption>
+</figure>
+<p>
+  In experiments, training with up to eightfold coordinate subsampling retained good sample quality while reducing runtime and memory use. This makes high-resolution diffusion more practical while preserving the ability to choose the sampling resolution. See the <a href="https://openreview.net/forum?id=OUeIBFhyem">paper</a> and <a href="https://github.com/samb-t/infty-diff">source code</a> for the architecture and experiments.
+</p>
+<h2>Citation</h2>
+<p>Please cite the article with:</p>
+<pre><code>@inproceedings{bond2024infty,
+  title     = {{$\infty$-Diff: Infinite Resolution Diffusion with Subsampled Mollified States}},
+  author    = {Sam Bond-Taylor and Chris G. Willcocks},
+  booktitle = {The Twelfth International Conference on Learning Representations},
+  year      = {2024},
+  url       = {https://openreview.net/forum?id=OUeIBFhyem}
+}</code></pre>
+</article>
+
+<a href="#top">[return to top]</a>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Course materials — Chris G. Willcocks</title>
+    <link rel="stylesheet" type="text/css" href="/data/style.css"/>
+    <link rel="shortcut icon" href="/data/logo.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90396229-1"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-90396229-1'); </script>
+  <script defer src="/data/teaching/showcase.js"></script>
+  <style>pre { white-space: pre-wrap; overflow-wrap: anywhere; }</style>
+</head>
+<a id="top"></a>
+<div id="header">
+  <img id="headerLogo" src="/data/logo.svg" alt=""/>&nbsp;
+  <span id="headerLink">cwkx.com</span>
+  <span id="headerSubtitle">Research</span>
+</div>
+<hr class="hidden"/>
+<div id="menu">
+  <a href="/index.html">Home</a>
+  <a href="/blog.html"><b>Blog</b></a>
+  <a href="/publications.html">Publications</a>
+  <a href="/people.html">People</a>
+  <a href="/opportunities.html">Join as PhD/Postdoc</a>
+</div>
+<hr class="hidden"/>
+<div id="content">
+<div id="nav" role="navigation" aria-label="Post navigation">
+  <ul>
+    <li><a href="/blog.html#course-materials"><img src="/data/up-level.svg" width="16" height="16" alt="" style="vertical-align: -2px;"> back to blog</a></li>
+    <li><a href="/blog.html#teaching-posts">teaching</a>
+      <ul>
+        <li><a href="#course-materials" aria-current="page"><b>course materials</b></a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<hr class="hidden"/>
+<div id="main">
+<p><a href="/blog.html#course-materials">[back to blog]</a></p>
+<article aria-labelledby="course-materials">
+<h1 id="course-materials">Course materials</h1>
+<details open>
+<summary>Course materials: slides, code and practicals</summary>
+
+<p>Deep learning slides, practicals and code are linked below, followed by the reinforcement learning and cyber security lecture materials.</p>
+<hr>
+<h2 id="deeplearning">Deep Learning</h2>
+<p><a href="https://github.com/cwkx/materials/tree/main/deep-learning">Practicals and data</a> · <a href="https://github.com/cwkx/materials/tree/main/deep-learning/code">Python starter code</a></p>
+<ul>
+  <li>Lecture 1: Introduction (<a href="https://cwkx.github.io/materials/deep-learning/dl-lecture1.pdf">slides</a>)</li>
+  <li>Lecture 2: PyTorch programming (<a href="https://cwkx.github.io/materials/deep-learning/dl-lecture2.pdf">slides</a>, <a href="https://github.com/cwkx/ml-materials/tree/master">materials</a>, <a href="https://github.com/cwkx/materials/blob/main/deep-learning/code/dl-lecture2.py">code</a>)</li>
+  <li>Lecture 3: Designing architectures (<a href="https://cwkx.github.io/materials/deep-learning/dl-lecture3.pdf">slides</a>, <a href="https://colab.research.google.com/gist/cwkx/441e508d3b904413fd3950a09a1d3bd6/classifier.ipynb">encoder</a>, <a href="https://colab.research.google.com/gist/cwkx/e3ef25d0adb6e2f2bf747ce664bab318/conv-autoencoder.ipynb">conv-ae</a>, <a href="https://colab.research.google.com/gist/cwkx/aece978bc38ba35c2267d91b793a1456/unet.ipynb">unet</a>)</li>
+  <li>Lecture 4: Generative adversarial models (<a href="https://cwkx.github.io/materials/deep-learning/dl-lecture4.pdf">slides</a>, <a href="https://colab.research.google.com/gist/cwkx/74e33bc96f94f381bd15032d57e43786/simple-gan.ipynb">colab1</a>, <a href="https://colab.research.google.com/gist/cwkx/348cde3bf11a08c45a69b1873ebb6de3/conditional-gan.ipynb">colab2</a>, <a href="https://colab.research.google.com/gist/cwkx/7f5377ed8414a096180128b487846698/info-gan.ipynb">colab3</a>)</li>
+  <li>Lecture 5: Energy-based models (<a href="https://cwkx.github.io/materials/deep-learning/dl-lecture5.pdf">slides</a>, <a href="https://colab.research.google.com/gist/cwkx/6b2d802e804e908a3ee3d58c1e0e73be/dbm.ipynb">rbm-colab</a>, <a href="https://github.com/TeaPearce/Conditional_Diffusion_MNIST">cond-ddpm</a>, <a href="https://colab.research.google.com/gist/cwkx/3d85c2125cf2a93d6fe1bec12f7ded23/minimal-flow-matching.ipynb">flow-matching</a>)</li>
+  <li>Lecture 6: Flow models (<a href="https://cwkx.github.io/materials/deep-learning/dl-lecture6.pdf">slides</a>, <a href="https://openai.com/blog/glow/">blog</a>)</li>
+  <li>Lecture 7: Sequential models and Transformers (<a href="https://cwkx.github.io/materials/deep-learning/dl-lecture7.pdf">slides</a>)</li>
+  <li>Lecture 8: Variational and implicit models (<a href="https://cwkx.github.io/materials/deep-learning/dl-lecture8.pdf">slides</a>, <a href="https://www.desmos.com/calculator/2sboqbhler">desmos</a>)</li>
+  <li>Lecture 9: Practical challenges (<a href="https://cwkx.github.io/materials/deep-learning/dl-lecture10.pdf">slides</a>)</li>
+  <li>Lecture 10: Generalisation theory (<a href="https://cwkx.github.io/materials/deep-learning/dl-lecture9.pdf">slides</a>, <a href="https://www.youtube.com/watch?v=AKMuA_TVz3A">K(x)</a>, <a href="https://www.youtube.com/watch?v=6-SORkCLYPM">proof</a>)</li>
+</ul>
+<h3>Practicals 5–9</h3>
+<ul>
+  <li>Practical 5: Image generation with GANs (<a href="https://cwkx.github.io/materials/deep-learning/dl-practical5.pdf">sheet</a>, <a href="https://github.com/cwkx/materials/blob/main/deep-learning/code/dl-practical5.py">code</a>)</li>
+  <li>Practical 6: Image diffusion and flow matching (<a href="https://cwkx.github.io/materials/deep-learning/dl-practical6.pdf">sheet</a>, <a href="https://github.com/cwkx/materials/blob/main/deep-learning/code/dl-practical6.py">code</a>)</li>
+  <li>Practical 7: Audio flow matching (<a href="https://cwkx.github.io/materials/deep-learning/dl-practical7.pdf">sheet</a>, <a href="https://github.com/cwkx/materials/blob/main/deep-learning/code/dl-practical7.py">code</a>)</li>
+  <li>Practical 8: GPT from scratch (<a href="https://cwkx.github.io/materials/deep-learning/dl-practical8.pdf">sheet</a>, <a href="https://github.com/cwkx/materials/blob/main/deep-learning/code/dl-practical8.py">code</a>)</li>
+  <li>Practical 9: Implicit images, audio and video (<a href="https://cwkx.github.io/materials/deep-learning/dl-practical9.pdf">sheet</a>, <a href="https://github.com/cwkx/materials/blob/main/deep-learning/code/dl-practical9.py">code</a>)</li>
+</ul>
+<hr>
+<h2 id="reinforcement">Reinforcement Learning</h2>
+<p>This material is now outdated. Check the <a href="https://github.com/cwkx/materials">materials repository</a> for the latest course content.</p>
+<ul>
+  <li>Lecture 1: Foundations. (<a href="/data/teaching/dl-and-rl/rl-lecture1.pdf">slides</a>, <a href="https://www.youtube.com/watch?v=K67RJH3V7Yw&list=PLMsTLcO6ettgmyLVrcPvFLYi2Rs-R4JOE&index=1">video</a>)</li>
+  <li>Lecture 2: Markov decision processes. (<a href="/data/teaching/dl-and-rl/rl-lecture2.pdf">slides</a>, <a href="https://www.youtube.com/watch?v=RmOdTQYQqmQ&list=PLMsTLcO6ettgmyLVrcPvFLYi2Rs-R4JOE&index=2">video</a>)</li>
+  <li>Lecture 3: OpenAI gym: <i>by Adam Leach</i>. (<a href="https://www.youtube.com/watch?v=BNSwFURmaCA&list=PLMsTLcO6ettgmyLVrcPvFLYi2Rs-R4JOE&index=3">video</a>)</li>
+  <li>Lecture 4: Dynamic programming. (<a href="/data/teaching/dl-and-rl/rl-lecture4.pdf">slides</a>, <a href="https://www.youtube.com/watch?v=gqC_p2XWpLU&list=PLMsTLcO6ettgmyLVrcPvFLYi2Rs-R4JOE&index=4">video</a>)</li>
+  <li>Lecture 5: Monte Carlo methods. (<a href="/data/teaching/dl-and-rl/rl-lecture5.pdf">slides</a>, <a href="https://www.youtube.com/watch?v=4xfWzLmIccs&list=PLMsTLcO6ettgmyLVrcPvFLYi2Rs-R4JOE&index=5">video</a>)</li>
+  <li>Lecture 6: Temporal-difference methods. (<a href="/data/teaching/dl-and-rl/rl-lecture6.pdf">slides</a>, <a href="https://www.youtube.com/watch?v=phgI_880uSw&list=PLMsTLcO6ettgmyLVrcPvFLYi2Rs-R4JOE&index=6">video</a>)</li>
+  <li>Lecture 7: Function approximation. (<a href="/data/teaching/dl-and-rl/rl-lecture7.pdf">slides</a>, <a href="https://www.youtube.com/watch?v=oqmCj95d3Y4&list=PLMsTLcO6ettgmyLVrcPvFLYi2Rs-R4JOE&index=7">video</a>)</li>
+  <li>Lecture 8: Policy gradient methods. (<a href="/data/teaching/dl-and-rl/rl-lecture8.pdf">slides</a>, <a href="https://www.youtube.com/watch?v=h4HixR0Co6Q&list=PLMsTLcO6ettgmyLVrcPvFLYi2Rs-R4JOE&index=8">video</a>)</li>
+  <li>Lecture 9: Model-based methods. (<a href="/data/teaching/dl-and-rl/rl-lecture9.pdf">slides</a>, <a href="https://www.youtube.com/watch?v=aUjuBvqJ8UM&list=PLMsTLcO6ettgmyLVrcPvFLYi2Rs-R4JOE&index=9">video</a>)</li>
+  <li>Lecture 10: Extended methods. (<a href="/data/teaching/dl-and-rl/rl-lecture10.pdf">slides</a>, <a href="https://www.youtube.com/watch?v=w6rGqprrxp8&list=PLMsTLcO6ettgmyLVrcPvFLYi2Rs-R4JOE&index=10">video</a>)</li>
+  </ul>
+<hr>
+<h2 id="cybersecurity">Cyber Security</h2>
+<p>This material is now outdated. Check the <a href="https://github.com/cwkx/materials">materials repository</a> for the latest course content.</p>
+<ul>
+  <li>Lecture 1: Introduction. (<a href="/data/teaching/cybersecurity/lecture1.pdf">slides</a>)</li>
+  <li>Lecture 2: Applied cryptography. (<a href="/data/teaching/cybersecurity/lecture2.pdf">slides</a>)</li>
+  <li>Lecture 3: OS security and access control. (<a href="/data/teaching/cybersecurity/lecture3.pdf">slides</a>)</li>
+  <li>Lecture 4: Network and web security. (<a href="/data/teaching/cybersecurity/lecture4.pdf">slides</a>)</li>
+  <li>Lecture 5: Database security. (<a href="/data/teaching/cybersecurity/lecture5.pdf">slides</a>)</li>
+  <li>Lecture 6: The threat landscape. (<a href="/data/teaching/cybersecurity/lecture6.pdf">slides</a>)</li>
+  <li>Lecture 7: Understanding the platform. (<a href="/data/teaching/cybersecurity/lecture7.pdf">slides</a>)</li>
+  <li>Lecture 8: Software security. (<a href="/data/teaching/cybersecurity/lecture8.pdf">slides</a>)</li>
+  <li>Lecture 9: Security in industry: <i>by Jonathan Frawley</i> (<a href="/data/teaching/cybersecurity/lecture9.pdf">slides</a>)</li>
+  <li>Lecture 10: Risk and ML applications. (<a href="/data/teaching/cybersecurity/lecture10.pdf">slides</a>)</li>
+</ul>
+<p>Lab content:</p>
+<ul>
+  <li>Practical 1: Hacking and securing a simple web server. (<a href="/data/teaching/cybersecurity/task1-python.pdf">pdf</a>, <a href="/data/teaching/cybersecurity/practical1-python.zip">materials</a>)</li>
+  <li>Practical 2: Traversal and XSS attacks on a web server. (<a href="/data/teaching/cybersecurity/task2-python.pdf">pdf</a>, <a href="/data/teaching/cybersecurity/practical2-python.zip">materials</a>)</li>
+  <li>Practical 3: Database security. (<a href="/data/teaching/cybersecurity/task3-python.pdf">pdf</a>, <a href="/data/teaching/cybersecurity/practical3-python.zip">materials</a>)</li>
+  <li>Practical 4: Software security. (<a href="/data/teaching/cybersecurity/task4.pdf">pdf</a>)</li>
+  <li>Answers 1: Sample answers for some of the tasks in practical 1. (<a href="/data/teaching/cybersecurity/answers1-python.pdf">pdf</a>)</li>
+  <li>Answers 1: Sample answers for some of the tasks in practical 2. (<a href="/data/teaching/cybersecurity/answers2-python.pdf">pdf</a>)</li>
+  <li>Answers 3: Sample answers for some of the tasks in practical 3. (<a href="/data/teaching/cybersecurity/answers3-python.pdf">pdf</a>)</li>
+</ul>
+<p>
+  All the above lecture material is made available under the <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a>. Some content within the lectures is from third parties and not covered by the license. Reference as follows, e.g. for DL and RL:</p>
+<code>
+  <pre>
+@misc{willcocks2021lectures,
+  author       = {Chris G. Willcocks},
+  title        = {Lectures on Deep Learning and Reinforcement Learning},
+  year         = {2021},
+  howpublished = {\textsc{url:}~\url{https://cwkx.com/blog.html#course-materials}}
+}
+  </pre>
+</code>
+</details>
+</article>
+
+<a href="#top">[return to top]</a>
+</div>
+</div>
+</html>

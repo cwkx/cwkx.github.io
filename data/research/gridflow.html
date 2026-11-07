@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>GridFlow: decentralized flow matching — Chris G. Willcocks</title>
+  <link rel="stylesheet" type="text/css" href="/data/style.css"/>
+  <link rel="shortcut icon" href="/data/logo.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90396229-1"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-90396229-1');</script>
+  <style>pre { white-space: pre-wrap; overflow-wrap: anywhere; }</style>
+</head>
+<body>
+<a id="top"></a>
+<div id="header">
+  <img id="headerLogo" src="/data/logo.svg" alt=""/>&nbsp;
+  <span id="headerLink">cwkx.com</span>
+  <span id="headerSubtitle">Research</span>
+</div>
+<hr class="hidden"/>
+<div id="menu">
+  <a href="/index.html">Home</a>
+  <a href="/blog.html"><b>Blog</b></a>
+  <a href="/publications.html">Publications</a>
+  <a href="/people.html">People</a>
+  <a href="/opportunities.html">Join as PhD/Postdoc</a>
+</div>
+<hr class="hidden"/>
+<div id="content">
+<div id="nav" role="navigation" aria-label="Post navigation">
+  <ul>
+    <li><a href="/blog.html#gridflow"><img src="/data/up-level.svg" width="16" height="16" alt="" style="vertical-align: -2px;"> back to blog</a></li>
+    <li><a href="/blog.html#research-posts">research</a>
+      <ul>
+        <li><a href="#gridflow" aria-current="page"><b>gridflow</b></a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<hr class="hidden"/>
+<div id="main">
+<p><a href="/blog.html#gridflow">[back to blog]</a></p>
+<article aria-labelledby="gridflow">
+<h1 id="gridflow">GridFlow: decentralized flow matching</h1>
+<p>
+  The group is interested in decentralised large-scale generative modelling. Among the main approaches, sequence dependencies make autoregressive models difficult to decentralise. Diffusion and flow matching frameworks can be partitioned across both data space and time, which we explore in <a href="https://openreview.net/forum?id=0FddZoRO3w">GridFlow</a>:
+</p>
+<figure class="paper-figure" style="max-width: 640px;">
+  <a href="/data/articles/gridflow/partitioning.svg"><img src="/data/articles/gridflow/partitioning.svg" width="1980" height="1331" decoding="async" alt="Comparison of a single model, time blocks, data experts and GridFlow. GridFlow combines data experts with time blocks, using a shared final block."></a>
+  <figcaption>GridFlow partitions both data and time, combining independently trained blocks.</figcaption>
+</figure>
+<p>
+  We split the data into subsets and the generative trajectory into time segments, forming a grid of small models trained without inter-node communication. At sampling time, a router combines their predictions. The best grids concentrate experts in the early, noisy stages and share a single final block. Clustering, router training and the final block still use the full dataset:
+</p>
+<figure class="paper-figure" style="max-width: 480px;">
+  <a href="/data/articles/gridflow/samples.webp"><img src="/data/articles/gridflow/samples.webp" width="1440" height="1440" loading="lazy" decoding="async" alt="A grid of generated ImageNet images, with rows of lizards, turtles, vans, sarongs, mushrooms, retrievers, piggy banks, cliff dwellings, forklifts and corgis."></a>
+  <figcaption>ImageNet-256 samples from a fully decentralised model across data and time, with a different class on each row.</figcaption>
+</figure>
+<p>
+  At matched training compute, our best grids outperform a single model on CIFAR-10 but still trail it on ImageNet-256. They reduce per-device memory and sampling costs compared with data-only decentralisation, pointing towards collaborative training on smaller machines with slow connections. See the <a href="https://openreview.net/forum?id=0FddZoRO3w">paper</a> for details.
+</p>
+<p>
+  In the future, we are particularly interested in robust decentralised safeguards and proactive defences against rapidly evolving, interconnected agentic threats across multiple fronts.
+</p>
+<h2>Citation</h2>
+<p>Please cite the article with:</p>
+<pre><code>@inproceedings{newbould2026gridflow,
+  title     = {GridFlow: Decentralized Block-Based Flow Matching},
+  author    = {Joshua Newbould and Mingyue Jian and Thirupathaiah Vasantam and Chris G. Willcocks},
+  booktitle = {NeurIPS Workshop on Collaborative, Open, and Decentralized Training of Foundation Models},
+  year      = {2026},
+  note      = {Oral},
+  url       = {https://openreview.net/forum?id=0FddZoRO3w}
+}</code></pre>
+</article>
+
+<a href="#top">[return to top]</a>
+</div>
+</div>
+</body>
+</html>

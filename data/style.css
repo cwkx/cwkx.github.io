@@ -189,6 +189,21 @@ h4 {
 	width: 50%;
 }
 
+.paper-figure {
+	margin: 1em 0;
+	max-width: 720px;
+}
+
+.paper-figure img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.paper-figure figcaption {
+	margin-top: 0.35em;
+}
+
 .info {
 	background-color: #f2f2f2;
 	border-left: 6px solid #b2b2b2;
